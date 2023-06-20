@@ -1,0 +1,140 @@
+settings:
+  - support_class: 'ISO'
+    rest_key: 'sv'
+    rest_value:
+      - { name: 'AUTO', val: 'AUTO' }
+      - { name: 'ISO125', val: '125' }
+      - { name: 'ISO200', val: '200' }
+      - { name: 'ISO400', val: '400' }
+      - { name: 'ISO800', val: '800' }
+      - { name: 'ISO1600', val: '1600' }
+      - { name: 'ISO3200', val: '3200' }
+      - { name: 'ISO6400', val: '6400' }
+      - { name: 'ISO12800', val: '12800' }
+      - { name: 'ISO25600', val: '25600' }
+  - support_class: 'StillImageCaptureFormatAndQuality'
+    rest_key: 'stillSize'
+    rest_value:
+      - { name: 'JPEG_VGA_11ASPECT_GOOD', val: 'VGA1_11' }
+      - { name: 'JPEG_VGA_32ASPECT_GOOD', val: 'VGA1_32' }
+      - { name: 'JPEG_VGA_43ASPECT_GOOD', val: 'VGA1_43' }
+      - { name: 'JPEG_VGA_11ASPECT_BETTER', val: 'VGA2_11' }
+      - { name: 'JPEG_VGA_32ASPECT_BETTER', val: 'VGA2_32' }
+      - { name: 'JPEG_VGA_43ASPECT_BETTER', val: 'VGA2_43' }
+      - { name: 'JPEG_VGA_11ASPECT_BEST', val: 'VGA3_11' }
+      - { name: 'JPEG_VGA_32ASPECT_BEST', val: 'VGA3_32' }
+      - { name: 'JPEG_VGA_43ASPECT_BEST', val: 'VGA3_43' }
+      - { name: 'JPEG_LARGE_11ASPECT_GOOD', val: 'L1_11' }
+      - { name: 'JPEG_LARGE_32ASPECT_GOOD', val: 'L1_32' }
+      - { name: 'JPEG_LARGE_43ASPECT_GOOD', val: 'L1_43' }
+      - { name: 'JPEG_LARGE_11ASPECT_BETTER', val: 'L2_11' }
+      - { name: 'JPEG_LARGE_32ASPECT_BETTER', val: 'L2_32' }
+      - { name: 'JPEG_LARGE_43ASPECT_BETTER', val: 'L2_43' }
+      - { name: 'JPEG_LARGE_11ASPECT_BEST', val: 'L3_11' }
+      - { name: 'JPEG_LARGE_32ASPECT_BEST', val: 'L3_32' }
+      - { name: 'JPEG_LARGE_43ASPECT_BEST', val: 'L3_43' }
+      - { name: 'JPEG_MEDIUM_11ASPECT_GOOD', val: 'M1_11' }
+      - { name: 'JPEG_MEDIUM_32ASPECT_GOOD', val: 'M1_32' }
+      - { name: 'JPEG_MEDIUM_43ASPECT_GOOD', val: 'M1_43' }
+      - { name: 'JPEG_MEDIUM_11ASPECT_BETTER', val: 'M2_11' }
+      - { name: 'JPEG_MEDIUM_32ASPECT_BETTER', val: 'M2_32' }
+      - { name: 'JPEG_MEDIUM_43ASPECT_BETTER', val: 'M2_43' }
+      - { name: 'JPEG_MEDIUM_11ASPECT_BEST', val: 'M3_11' }
+      - { name: 'JPEG_MEDIUM_32ASPECT_BEST', val: 'M3_32' }
+      - { name: 'JPEG_MEDIUM_43ASPECT_BEST', val: 'M3_43' }
+      - { name: 'JPEG_SMALL_11ASPECT_GOOD', val: 'S1_11' }
+      - { name: 'JPEG_SMALL_32ASPECT_GOOD', val: 'S1_32' }
+      - { name: 'JPEG_SMALL_43ASPECT_GOOD', val: 'S1_43' }
+      - { name: 'JPEG_SMALL_11ASPECT_BETTER', val: 'S2_11' }
+      - { name: 'JPEG_SMALL_32ASPECT_BETTER', val: 'S2_32' }
+      - { name: 'JPEG_SMALL_43ASPECT_BETTER', val: 'S2_43' }
+      - { name: 'JPEG_SMALL_11ASPECT_BEST', val: 'S3_11' }
+      - { name: 'JPEG_SMALL_32ASPECT_BEST', val: 'S3_32' }
+      - { name: 'JPEG_SMALL_43ASPECT_BEST', val: 'S3_43' }
+      - { name: 'JPEG_EXTRA_SMALL_11ASPECT_GOOD', val: 'XS1_11' }
+      - { name: 'JPEG_EXTRA_SMALL_32ASPECT_GOOD', val: 'XS1_32' }
+      - { name: 'JPEG_EXTRA_SMALL_43ASPECT_GOOD', val: 'XS1_43' }
+      - { name: 'JPEG_EXTRA_SMALL_11ASPECT_BETTER', val: 'XS2_11' }
+      - { name: 'JPEG_EXTRA_SMALL_32ASPECT_BETTER', val: 'XS2_32' }
+      - { name: 'JPEG_EXTRA_SMALL_43ASPECT_BETTER', val: 'XS2_43' }
+      - { name: 'JPEG_EXTRA_SMALL_11ASPECT_BEST', val: 'XS3_11' }
+      - { name: 'JPEG_EXTRA_SMALL_32ASPECT_BEST', val: 'XS3_32' }
+      - { name: 'JPEG_EXTRA_SMALL_43ASPECT_BEST', val: 'XS3_43' }
+  - support_class: 'WhiteBalance'
+    rest_key: 'WBMode'
+    rest_value:
+      - { name: 'AUTO', val: 'auto' }
+      - { name: 'DAYLIGHT', val: 'daylight' }
+      - { name: 'SHADE', val: 'shade' }
+      - { name: 'CLOUDY', val: 'cloudy' }
+      - { name: 'FLUORESCENT_DAYLIGHT', val: 'daylightFluorescent' }
+      - { name: 'FLUORESCENT_DAYLIGHT_WHITE', val: 'dayWhiteFluorescent' }
+      - { name: 'FLUORESCENT_COOL_WHITE', val: 'coolWhiteFluorescent' }
+      - { name: 'FLUORESCENT_WARM_WHITE', val: 'warmWhiteFluorescent' }
+      - { name: 'TUNGSTEN', val: 'tungsten' }
+      - { name: 'MANUAL', val: 'manual' }
+      - { name: 'RING_LIGHT', val: 'ringLight' }
+  - support_class: 'ExposureCompensation'
+    rest_key: 'xv'
+    rest_value:
+      - { name: 'EC_NEGATIVE2_0', val: '-2.0' }
+      - { name: 'EC_NEGATIVE1_7', val: '-1.7' }
+      - { name: 'EC_NEGATIVE1_3', val: '-1.3' }
+      - { name: 'EC_NEGATIVE1_0', val: '-1.0' }
+      - { name: 'EC_NEGATIVE0_7', val: '-0.7' }
+      - { name: 'EC_NEGATIVE0_3', val: '-0.3' }
+      - { name: 'EC0_0', val: '0.0' }
+      - { name: 'EC0_3', val: '+0.3' }
+      - { name: 'EC0_7', val: '+0.7' }
+      - { name: 'EC1_0', val: '+1.0' }
+      - { name: 'EC1_3', val: '+1.3' }
+      - { name: 'EC1_7', val: '+1.7' }
+      - { name: 'EC2_0', val: '+2.0' }
+  - support_class: 'ExposureMode'
+    rest_key: 'exposureMode'
+    rest_value:
+      - { name: 'STILL', val: 'still' }
+      - { name: 'MOVIE', val: 'movie' }
+  - support_class: 'MovieCaptureFormat'
+    rest_key: 'movieSize'
+    rest_value:
+      - { name: 'MCF4K30P', val: '4K30' }
+      - { name: 'FULLHD30P', val: 'FHD30p' }
+      - { name: 'HD30P', val: 'HD30p' }
+      - { name: 'HD60P', val: 'HD60p' }
+  - support_class: 'ExposureMeteringMode'
+    rest_key: 'meteringMode'
+    rest_value:
+      - { name: 'MULTI', val: 'multi' }
+      - { name: 'CENTER', val: 'center' }
+      - { name: 'SPOT', val: 'spot' }
+  - support_class: 'FlashMode'
+    rest_key: 'flashMode'
+    rest_value:
+      - { name: 'FLASH_OFF', val: 'flashOff' }
+      - { name: 'AUTO', val: 'auto' }
+      - { name: 'FLASH_ON', val: 'flashOn' }
+      - { name: 'AUTO_ANTI_RED_EYE', val: 'autoAntiRedEye' }
+      - { name: 'FLASH_ON_ANTI_RED_EYE', val: 'flashOnAntiRedEye' }
+      - { name: 'RING_LIGHT', val: 'ringLight' }
+  - support_class: 'ZoomLevel'
+    rest_key: 'zoomLevel'
+    rest_value:
+      - { name: 'M1_0', val: '1' }
+      - { name: 'M1_2', val: '2' }
+      - { name: 'M1_5', val: '3' }
+      - { name: 'M1_8', val: '4' }
+      - { name: 'M2_2', val: '5' }
+      - { name: 'M2_7', val: '6' }
+      - { name: 'M3_3', val: '7' }
+      - { name: 'M4_1', val: '8' }
+      - { name: 'M5_0', val: '9' }
+  - support_class: 'FocusSetting'
+    rest_key: 'focusMode'
+    rest_value:
+      - { name: 'STANDARD', val: 'AF' }
+      - { name: 'MACRO', val: 'Macro' }
+      - { name: 'MACRO_1CM', val: 'Macro1cm' }
+      - { name: 'PF', val: 'PF' }
+      - { name: 'INFINITY', val: 'inf' }
+      - { name: 'MF', val: 'MF' }

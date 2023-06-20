@@ -1,0 +1,66 @@
+settings:
+  - support_class: 'ISO'
+    rest_key: 'sv'
+    rest_value:
+      - { name: 'AUTO', val: 'AUTO' }
+      - { name: 'AUTO_HI', val: 'AUTO-Hi' }
+      - { name: 'ISO200', val: '200' }
+      - { name: 'ISO400', val: '400' }
+      - { name: 'ISO800', val: '800' }
+      - { name: 'ISO1600', val: '1600' }
+      - { name: 'ISO3200', val: '3200' }
+      - { name: 'ISO6400', val: '6400' }
+  - support_class: 'WGM2Option'
+    rest_key: 'cameraMovieSetting'
+    rest_value:
+      - { name: 'WIDE_ANGLE_ORIENTATION_0', val: 'WOFF0' }
+      - { name: 'WIDE_ANGLE_ORIENTATION_90', val: 'WOFF90' }
+      - { name: 'WIDE_ANGLE_ORIENTATION_180', val: 'WOFF180' }
+      - { name: 'WIDE_ANGLE_ORIENTATION_270', val: 'WOFF270' }
+      - { name: 'NARROW_ANGLE_ORIENTATION_0_SR', val: 'NON0' }
+      - { name: 'NARROW_ANGLE_ORIENTATION_180_SR', val: 'NON180' }
+      - { name: 'NARROW_ANGLE_ORIENTATION_0', val: 'NOFF0' }
+      - { name: 'NARROW_ANGLE_ORIENTATION_90', val: 'NOFF90' }
+      - { name: 'NARROW_ANGLE_ORIENTATION_180', val: 'NOFF180' }
+      - { name: 'NARROW_ANGLE_ORIENTATION_270', val: 'NOFF270' }
+  - support_class: 'StillImageCaptureFormatAndQuality'
+    rest_key: 'stillSize'
+    rest_value:
+      - { name: 'JPEG_6M_11ASPECT', val: '6M11' }
+      - { name: 'JPEG_6M_169ASPECT', val: '6M169' }
+      - { name: 'JPEG_8M_43ASPECT', val: '8M43' }
+      - { name: 'JPEG_5M_43ASPECT', val: '5M43' }
+      - { name: 'JPEG_4M_169ASPECT', val: '4M169' }
+      - { name: 'UNKNOWN', val: 'unknown' }
+  - support_class: 'WhiteBalance'
+    rest_key: 'WBMode'
+    rest_value:
+      - { name: 'AUTO', val: 'auto' }
+      - { name: 'MANUAL', val: 'manual' }
+      - { name: 'OUTDOOR', val: 'outdoor' }
+  - support_class: 'ExposureCompensation'
+    rest_key: 'xv'
+    rest_value:
+      - { name: 'EC_NEGATIVE2_0', val: '-2.0' }
+      - { name: 'EC_NEGATIVE1_5', val: '-1.5' }
+      - { name: 'EC_NEGATIVE1_0', val: '-1.0' }
+      - { name: 'EC_NEGATIVE0_5', val: '-0.5' }
+      - { name: 'EC0_0', val: '0.0' }
+      - { name: 'EC0_5', val: '+0.5' }
+      - { name: 'EC1_0', val: '+1.0' }
+      - { name: 'EC1_5', val: '+1.5' }
+      - { name: 'EC2_0', val: '+2.0' }
+  - support_class: 'ExposureMode'
+    rest_key: 'exposureMode'
+    rest_value:
+      - { name: 'STILL', val: 'still' }
+      - { name: 'MOVIE', val: 'movie' }
+  - support_class: 'MovieCaptureFormat'
+    rest_key: 'movieSize'
+    rest_value:
+      - { name: 'MCF4K30P', val: '4K30' }
+      - { name: 'FULLHD30P', val: 'FHD30p' }
+      - { name: 'FULLHD60P', val: 'FHD60p' }
+      - { name: 'HD120P', val: 'HD120p' }
+      - { name: 'HD30P', val: 'HD30p' }
+      - { name: 'HD60P', val: 'HD60p' }

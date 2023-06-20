@@ -1,0 +1,1659 @@
+services:
+  - name: DeviceInformationService
+    uuid: 0x180A
+    characteristics:
+      - name: DIS Manufacturer Name String
+        uuid: 0x2A29
+        property: [Read]
+        valueFields:
+          - name: Manufacturer Name
+            format: utf8s
+      - name: DIS Model Number String
+        uuid: 0x2A24
+        property: [Read]
+        valueFields:
+          - name: Model  Number
+            format: utf8s
+      - name: DIS Serial Number String
+        uuid: 0x2A25
+        property: [Read]
+        valueFields:
+          - name: Serial Numer
+            format: utf8s
+      - name: DIS Firmware Revision String
+        uuid: 0x2A26
+        property: [Read]
+        valueFields:
+          - name: Firmware Revision
+            format: utf8s
+      - name: DIS Software Revision String
+        uuid: 0x2A28
+        property: [Read]
+        valueFields:
+          - name: Software Revision
+            format: utf8s
+  - name: Camera Information Service
+    uuid: 9A5ED1C5-74CC-4C50-B5B6-66A48E7CCFF1
+    characteristics:
+      - name: Manufacturer Name String
+        uuid: F5666A48-6A74-40AE-A817-3C9B3EFB59A6
+        property: [Read]
+        valueFields:
+          - name: Manufacturer Name
+            format: utf8s
+      - name: Model Number String
+        uuid: 35FE6272-6AA5-44D9-88E1-F09427F51A71
+        property: [Read]
+        valueFields:
+          - name: Model  Number
+            format: utf8s
+      - name: Serial Number String
+        uuid: 0D2FC4D5-5CB3-4CDE-B519-445E599957D8
+        property: [Read]
+        valueFields:
+          - name: Serial Number
+            format: utf8s
+      - name: Firmware Revision String
+        uuid: B4EB8905-7411-40A6-A367-2834C2157EA7
+        property: [Read]
+        valueFields:
+          - name: Firmware Revision
+            format: utf8s
+      - name: Bluetooth Device Name
+        uuid: 6FE9D605-3122-4FCE-A0AE-FD9BC08FF879
+        property: [Read]
+        valueFields:
+          - name: Bluetooth Device Name
+            format: utf8s
+      - name: Bluetooth MAC Address String
+        uuid: 97E34DA2-2E1A-405B-B80D-F8F0AA9CC51C
+        property: [Read]
+        valueFields:
+          - name: Bluetooth MAC Address
+            format: utf8s
+  - name: Shooting Service
+    uuid: 9F00F387-8345-4BBC-8B92-B87B52E3091A
+    characteristics:
+      - name: Shooting Service Notification
+        uuid: 671466A5-5535-412E-AC4F-8B2F06AF2237
+        property: [Read, Notify]
+        type: variable
+        valueFields:
+          - name: Number of Notification
+            format: sint8
+          - name: Include Changed Value
+            format: sint8
+            enums:
+              - key: 0
+                value: not include
+              - key: 1
+                value: include
+          - name: UUID
+            format: sint128
+          - name: Changed Value
+            format: variable
+      - name: High Frequency Shooting Service Notification
+        uuid: 2AC97991-A78B-4CD4-9AE8-6E030E1D9EDB
+        property: [Read, Notify]
+        type: variable
+        valueFields:
+          - name: Number of Notification
+            format: sint8
+          - name: Include Changed Value
+            format: sint8
+            enums:
+              - key: 0
+                value: not include
+              - key: 1
+                value: include
+          - name: UUID
+            format: sint128
+          - name: Changed Value
+            format: variable
+      - name: Shutter Speed
+        uuid: D3CE2AED-10FA-4648-833D-CD74C6F35905
+        property: [Read, Write, Notify]
+        valueFields:
+          - name: Shutter Speed
+            format: uint8
+            enums:
+              - key: 0
+                value: 撮影モードB、T
+              - key: 1
+                value: '1/25000'
+              - key: 2
+                value: '1/20000'
+              - key: 3
+                value: '1/16000'
+              - key: 4
+                value: '1/12500'
+              - key: 5
+                value: '1/10000'
+              - key: 6
+                value: '1/8000'
+              - key: 7
+                value: '1/6400'
+              - key: 8
+                value: '1/5000'
+              - key: 9
+                value: '1/4000'
+              - key: 10
+                value: '1/3200'
+              - key: 11
+                value: '1/2500'
+              - key: 12
+                value: '1/2000'
+              - key: 13
+                value: '1/1600'
+              - key: 14
+                value: '1/1250'
+              - key: 15
+                value: '1/1000'
+              - key: 16
+                value: '1/800'
+              - key: 17
+                value: '1/640'
+              - key: 18
+                value: '1/500'
+              - key: 19
+                value: '1/400'
+              - key: 20
+                value: '1/320'
+              - key: 21
+                value: '1/250'
+              - key: 22
+                value: '1/200'
+              - key: 23
+                value: '1/160'
+              - key: 24
+                value: '1/125'
+              - key: 25
+                value: '1/100'
+              - key: 26
+                value: '1/80'
+              - key: 27
+                value: '1/60'
+              - key: 28
+                value: '1/50'
+              - key: 29
+                value: '1/40'
+              - key: 30
+                value: '1/30'
+              - key: 31
+                value: '1/25'
+              - key: 32
+                value: '1/20'
+              - key: 33
+                value: '1/15'
+              - key: 34
+                value: '1/13'
+              - key: 35
+                value: '1/10'
+              - key: 36
+                value: '1/8'
+              - key: 37
+                value: '1/6'
+              - key: 38
+                value: '1/5'
+              - key: 39
+                value: '1/4'
+              - key: 40
+                #THETAでは1/3
+                value: '0.3'
+              - key: 41
+                value: '0.4'
+              - key: 42
+                value: '0.5'
+              - key: 43
+                value: '0.6'
+              - key: 44
+                value: '0.8'
+              - key: 45
+                value: '1'
+              - key: 46
+                value: '1.3'
+              - key: 47
+                value: '1.6'
+              - key: 48
+                value: '2'
+              - key: 49
+                value: '2.5'
+              - key: 50
+                value: '3'
+              - key: 51
+                value: '4'
+              - key: 52
+                value: '5'
+              - key: 53
+                value: '6'
+              - key: 54
+                value: '8'
+              - key: 55
+                value: '10'
+              - key: 56
+                value: '13'
+              - key: 57
+                value: '15'
+              - key: 58
+                value: '20'
+              - key: 59
+                value: '25'
+              - key: 60
+                value: '30'
+              - key: 61
+                value: '60'
+              - key: 101
+                value: '1/24000'
+              - key: 102
+                value: '1/12000'
+              - key: 103
+                value: '1/6000'
+              - key: 104
+                value: '1/3000'
+              - key: 105
+                value: '1/1500'
+              - key: 106
+                value: '1/750'
+              - key: 107
+                value: '1/350'
+              - key: 108
+                value: '1/180'
+              - key: 109
+                value: '1/90'
+              - key: 110
+                value: '1/45'
+              - key: 111
+                value: '0.7'
+              - key: 112
+                value: '1.5'
+              - key: 121
+                value: '7'
+              - key: 122
+                value: '9'
+              - key: 123
+                value: '40'
+              - key: 124
+                value: '50'
+              - key: 126
+                value: '70'
+              - key: 127
+                value: '80'
+              - key: 128
+                value: '90'
+              - key: 129
+                value: '100'
+              - key: 130
+                value: '110'
+              - key: 131
+                value: '120'
+              - key: 132
+                value: '130'
+              - key: 133
+                value: '140'
+              - key: 134
+                value: '150'
+              - key: 135
+                value: '160'
+              - key: 136
+                value: '170'
+              - key: 137
+                value: '180'
+              - key: 138
+                value: '190'
+              - key: 139
+                value: '200'
+              - key: 140
+                value: '210'
+              - key: 141
+                value: '220'
+              - key: 142
+                value: '230'
+              - key: 143
+                value: '240'
+              - key: 144
+                value: '250'
+              - key: 145
+                value: '260'
+              - key: 146
+                value: '270'
+              - key: 147
+                value: '280'
+              - key: 148
+                value: '290'
+              - key: 149
+                value: '300'
+              - key: 150
+                value: '360'
+              - key: 151
+                value: '420'
+              - key: 152
+                value: '480'
+              - key: 153
+                value: '540'
+              - key: 154
+                value: '600'
+              - key: 155
+                value: '660'
+              - key: 156
+                value: '720'
+              - key: 157
+                value: '780'
+              - key: 158
+                value: '840'
+              - key: 159
+                value: '900'
+              - key: 160
+                value: '960'
+              - key: 161
+                value: '1020'
+              - key: 162
+                value: '1080'
+              - key: 163
+                value: '1140'
+              - key: 164
+                value: '1200'
+      - name: Aperture
+        uuid: 3911F22D-9771-479D-B2B9-F729D9BAF9DC
+        property: [Read, Write, Notify]
+        valueFields:
+          - name: Aperture
+            format: sint8
+            enums:
+              - key: 0
+                value: AUTO
+              - key: 1
+                value: '1.0'
+              - key: 2
+                value: '1.1'
+              - key: 3
+                value: '1.3'
+              - key: 4
+                value: '1.4'
+              - key: 5
+                value: '1.6'
+              - key: 6
+                value: '1.8'
+              - key: 7
+                value: '2.0'
+              - key: 8
+                value: '2.2'
+              - key: 9
+                value: '2.5'
+              - key: 10
+                value: '2.8'
+              - key: 11
+                value: '3.2'
+              - key: 12
+                value: '3.5'
+              - key: 13
+                value: '4.0'
+              - key: 14
+                value: '4.5'
+              - key: 15
+                value: '5.0'
+              - key: 16
+                value: '5.6'
+              - key: 17
+                value: '6.3'
+              - key: 18
+                value: '7.1'
+              - key: 19
+                value: '8.0'
+              - key: 20
+                value: '9.0'
+              - key: 21
+                value: '10'
+              - key: 22
+                value: '11'
+              - key: 23
+                value: '13'
+              - key: 24
+                value: '14'
+              - key: 25
+                value: '16'
+              - key: 26
+                value: '18'
+              - key: 27
+                value: '20'
+              - key: 28
+                value: '22'
+              - key: 29
+                value: '25'
+              - key: 30
+                value: '29'
+              - key: 31
+                value: '32'
+              - key: 32
+                value: '36'
+              - key: 33
+                value: '40'
+              - key: 34
+                value: '45'
+              - key: 35
+                value: '51'
+              - key: 36
+                value: '57'
+              - key: 37
+                value: '64'
+              - key: 38
+                value: '72'
+              - key: 39
+                value: '81'
+              - key: 40
+                value: '90'
+              - key: 101
+                value: '1.2'
+              - key: 102
+                value: '1.7'
+              - key: 103
+                value: '2.4'
+              - key: 104
+                value: '6.7'
+              - key: 105
+                value: '9.5'
+              - key: 106
+                value: '13'
+              - key: 107
+                value: '19'
+              - key: 108
+                value: '27'
+              - key: 109
+                value: '38'
+              - key: 110
+                value: '54'
+              - key: 111
+                value: '76'
+              - key: 121
+                value: '1.9'
+              - key: 122
+                value: '3.8'
+              - key: 123
+                value: '4.7'
+              - key: 124
+                value: '5.8'
+      - name: ISO Sensitivity
+        uuid: 206BD02C-78B2-42C4-820A-CF30E0963909
+        property: [Read, Write, Notify]
+        valueFields:
+          - name: ISO Sensitivity
+            format: sint32
+            enums:
+              - key: 0
+                value: AUTO
+              - key: 100
+                value: '100'
+              - key: 125
+                value: '125'
+              - key: 160
+                value: '160'
+              - key: 200
+                value: '200'
+              - key: 250
+                value: '250'
+              - key: 320
+                value: '320'
+              - key: 400
+                value: '400'
+              - key: 500
+                value: '500'
+              - key: 640
+                value: '640'
+              - key: 800
+                value: '800'
+              - key: 1000
+                value: '1000'
+              - key: 1250
+                value: '1250'
+              - key: 1600
+                value: '1600'
+              - key: 2000
+                value: '2000'
+              - key: 2500
+                value: '2500'
+              - key: 3200
+                value: '3200'
+              - key: 4000
+                value: '4000'
+              - key: 5000
+                value: '5000'
+              - key: 6400
+                value: '6400'
+              - key: 8000
+                value: '8000'
+              - key: 10000
+                value: '10000'
+              - key: 12800
+                value: '12800'
+              - key: 16000
+                value: '16000'
+              - key: 20000
+                value: '20000'
+              - key: 25600
+                value: '25600'
+              - key: 32000
+                value: '32000'
+              - key: 40000
+                value: '40000'
+              - key: 51200
+                value: '51200'
+              - key: 64000
+                value: '64000'
+              - key: 80000
+                value: '80000'
+              - key: 102400
+                value: '102400'
+              - key: 128000
+                value: '128000'
+              - key: 160000
+                value: '160000'
+              - key: 204800
+                value: '204800'
+              - key: 256000
+                value: '256000'
+              - key: 320000
+                value: '320000'
+              - key: 409600
+                value: '409600'
+              - key: 512000
+                value: '512000'
+              - key: 640000
+                value: '640000'
+              - key: 819200
+                value: '819200'
+              - key: 1024000
+                value: '1024000'
+              - key: 1280000
+                value: '1280000'
+              - key: 1600000
+                value: '1600000'
+              - key: 140
+                value: '140'
+              - key: 280
+                value: '280'
+              - key: 560
+                value: '560'
+              - key: 1100
+                value: '1100'
+              - key: 2200
+                value: '2200'
+              - key: 4500
+                value: '4500'
+              - key: 9000
+                value: '9000'
+              - key: 18000
+                value: '18000'
+              - key: 36000
+                value: '36000'
+              - key: 72000
+                value: '72000'
+              - key: 144000
+                value: '144000'
+              - key: 288000
+                value: '288000'
+              - key: 576000
+                value: '576000'
+              - key: 1158000
+                value: '1158000'
+      - name: Exposure Compensation
+        uuid: 30BCC8EB-725D-4048-A832-E76AE26A57E9
+        property: [Read, Write, Notify]
+        valueFields:
+          - name: Exposure Compensation
+            format: sint8
+            enums:
+              - key: -24
+                value: '-8.0'
+              - key: -23
+                value: '-7.7'
+              - key: -22
+                value: '-7.3'
+              - key: -21
+                value: '-7.0'
+              - key: -20
+                value: '-6.7'
+              - key: -19
+                value: '-6.3'
+              - key: -18
+                value: '-6.0'
+              - key: -17
+                value: '-5.7'
+              - key: -16
+                value: '-5.3'
+              - key: -15
+                value: '-5.0'
+              - key: -14
+                value: '-4.7'
+              - key: -13
+                value: '-4.3'
+              - key: -12
+                value: '-4.0'
+              - key: -11
+                value: '-3.7'
+              - key: -10
+                value: '-3.3'
+              - key: -9
+                value: '-3.0'
+              - key: -8
+                value: '-2.7'
+              - key: -7
+                value: '-2.3'
+              - key: -6
+                value: '-2.0'
+              - key: -5
+                value: '-1.7'
+              - key: -4
+                value: '-1.3'
+              - key: -3
+                value: '-1.0'
+              - key: -2
+                value: '-0.7'
+              - key: -1
+                value: '-0.3'
+              - key: 0
+                value: '0.0'
+              - key: 1
+                value: '0.3'
+              - key: 2
+                value: '0.7'
+              - key: 3
+                value: '1.0'
+              - key: 4
+                value: '1.3'
+              - key: 5
+                value: '1.7'
+              - key: 6
+                value: '2.0'
+              - key: 7
+                value: '2.3'
+              - key: 8
+                value: '2.7'
+              - key: 9
+                value: '3.0'
+              - key: 10
+                value: '3.3'
+              - key: 11
+                value: '3.7'
+              - key: 12
+                value: '4.0'
+              - key: 13
+                value: '4.3'
+              - key: 14
+                value: '4.7'
+              - key: 15
+                value: '5.0'
+              - key: 16
+                value: '5.3'
+              - key: 17
+                value: '5.7'
+              - key: 18
+                value: '6.0'
+              - key: 19
+                value: '6.3'
+              - key: 20
+                value: '6.7'
+              - key: 21
+                value: '7.0'
+              - key: 22
+                value: '7.3'
+              - key: 23
+                value: '7.7'
+              - key: 24
+                value: '8.0'
+              - key: -58
+                value: '-7.5'
+              - key: -57
+                value: '-6.5'
+              - key: -56
+                value: '-5.5'
+              - key: -55
+                value: '-4.5'
+              - key: -54
+                value: '-3.5'
+              - key: -53
+                value: '-2.5'
+              - key: -52
+                value: '-1.5'
+              - key: -51
+                value: '-0.5'
+              - key: 51
+                value: '0.5'
+              - key: 52
+                value: '1.5'
+              - key: 53
+                value: '2.5'
+              - key: 54
+                value: '3.5'
+              - key: 55
+                value: '4.5'
+              - key: 56
+                value: '5.5'
+              - key: 57
+                value: '6.5'
+              - key: 58
+                value: '7.5'
+      - name: White Balance
+        uuid: 2361F4FF-2C7E-4FC5-876B-F9B0EFBC06FD
+        property: [Read, Write, Notify]
+        valueFields:
+          - name: White Balance
+            format: sint8
+            enums:
+              - key: 0
+                value: auto
+              - key: 1
+                value: daylight
+              - key: 2
+                value: shade
+              - key: 3
+                value: cloudy-daylight
+              - key: 4
+                value: incandescent
+              - key: 6
+                value: dayLightFluorescent
+              - key: 7
+                value: dayWhiteFluorescent
+              - key: 8
+                value: fluorescent
+              - key: 9
+                value: bulbFluorescent
+              - key: 10
+                value: colortemperature
+              - key: 11
+                value: colortemperature2
+              - key: 12
+                value: colortemperature3
+              - key: 13
+                value: Manual
+              - key: 14
+                value: Manual2
+              - key: 15
+                value: Manual3
+              - key: 16
+                value: CTE
+              - key: 17
+                value: multipatternauto
+      - name: Drive Mode
+        uuid: B29E6DE3-1AEC-48C1-9D05-02CEA57CE664
+        property: [Read, Write, Notify]
+        valueFields:
+          - name: Drive Mode
+            format: uint8
+            enums:
+              - key: 0
+                value: 1コマ撮影
+              - key: 1
+                value: 1コマ撮影 (セルフ10秒)
+              - key: 2
+                value: 1コマ撮影 (セルフ2秒)
+              - key: 3
+                value: 連続撮影
+              - key: 4
+                value: ブラケット撮影
+              - key: 5
+                value: ブラケット撮影 (セルフ10秒)
+              - key: 6
+                value: ブラケット撮影 (セルフ2秒)
+              - key: 7
+                value: 多重露出
+              - key: 8
+                value: 多重露出 (セルフ10秒)
+              - key: 9
+                value: 多重露出 (セルフ2秒)
+              - key: 10
+                value: インターバル撮影
+              - key: 11
+                value: インターバル撮影 (セルフ10秒)
+              - key: 12
+                value: インターバル撮影 (セルフ2秒)
+              - key: 13
+                value: インターバル合成
+              - key: 14
+                value: インターバル合成 (セルフ10秒)
+              - key: 15
+                value: インターバル合成 (セルフ2秒)
+              - key: 16
+                value: 1コマ撮影 (リモコン即時)
+              - key: 17
+                value: 1コマ撮影 (リモコン3秒)
+              - key: 18
+                value: 連続撮影H
+              - key: 19
+                value: 連続撮影H (セルフ12秒)
+              - key: 20
+                value: 連続撮影H (セルフ2秒)
+              - key: 21
+                value: 連続撮影H (リモコン即時)
+              - key: 22
+                value: 連続撮影H (リモコン3秒)
+              - key: 23
+                value: 連続撮影M
+              - key: 24
+                value: 連続撮影M (セルフ12秒)
+              - key: 25
+                value: 連続撮影M (セルフ2秒)
+              - key: 26
+                value: 連続撮影M (リモコン即時)
+              - key: 27
+                value: 連続撮影M (リモコン3秒)
+              - key: 28
+                value: 連続撮影L
+              - key: 29
+                value: 連続撮影L (セルフ12秒)
+              - key: 30
+                value: 連続撮影L (セルフ2秒)
+              - key: 31
+                value: 連続撮影L (リモコン即時)
+              - key: 32
+                value: 連続撮影L (リモコン3秒)
+              - key: 33
+                value: ブラケット撮影 (リモコン即時)
+              - key: 34
+                value: ブラケット撮影 (リモコン3秒)
+              - key: 35
+                value: 多重露出 (リモコン即時)
+              - key: 36
+                value: 多重露出 (リモコン3秒)
+              - key: 37
+                value: インターバル撮影 (リモコン即時)
+              - key: 38
+                value: インターバル撮影 (リモコン3秒)
+              - key: 39
+                value: インターバル合成 (リモコン即時)
+              - key: 40
+                value: インターバル合成 (リモコン3秒)
+              - key: 41
+                value: インターバル動画
+              - key: 42
+                value: インターバル動画 (セルフ12秒)
+              - key: 43
+                value: インターバル動画 (セルフ2秒)
+              - key: 44
+                value: インターバル動画 (リモコン即時)
+              - key: 45
+                value: インターバル動画 (リモコン3秒)
+              - key: 46
+                value: モーションブラケット
+              - key: 47
+                value: モーションブラケット(セルフ12秒)
+              - key: 48
+                value: モーションブラケット(セルフ2秒)
+              - key: 49
+                value: モーションブラケット(リモコン即時)
+              - key: 50
+                value: モーションブラケット(リモコン3秒)
+              - key: 51
+                value: 被写界深度ブラケット
+              - key: 52
+                value: 被写界深度ブラケット(セルフ12秒)
+              - key: 53
+                value: 被写界深度ブラケット(セルフ2秒)
+              - key: 54
+                value: 被写界深度ブラケット(リモコン即時)
+              - key: 55
+                value: 被写界深度ブラケット(リモコン3秒)
+              - key: 56
+                value: ミラーアップ
+              - key: 57
+                value: ミラーアップ(セルフ12秒)
+              - key: 58
+                value: ミラーアップ(セルフ2秒)
+              - key: 59
+                value: ミラーアップ(リモコン即時)
+              - key: 60
+                value: ミラーアップ(リモコン3秒)
+              - key: 61
+                value: スターストリーム
+              - key: 62
+                value: スターストリーム(セルフ12秒)
+              - key: 63
+                value: スターストリーム(セルフ2秒)
+              - key: 64
+                value: スターストリーム(リモコン即時)
+              - key: 65
+                value: スターストリーム(リモコン3秒)
+      - name: Shooting Mode
+        uuid: A3C51525-DE3E-4777-A1C2-699E28736FCF
+        property: [Read, Write, Notify]
+        valueFields:
+          - name: Shooting Mode
+            format: uint8
+            enums:
+              - key: 0
+                value: P
+              - key: 1
+                value: Av
+              - key: 2
+                value: Tv
+              - key: 3
+                value: M
+              - key: 4
+                value: B
+              - key: 5
+                value: BT
+              - key: 6
+                value: T
+              - key: 7
+                value: Auto
+              - key: 8
+                value: TAv
+              - key: 9
+                value: Sv
+              - key: 10
+                value: X
+              - key: 11
+                value: MovieP
+              - key: 12
+                value: MovieTv
+              - key: 13
+                value: MovieAv
+              - key: 14
+                value: MovieTAv
+              - key: 15
+                value: MovieM
+              - key: 16
+                value: AstroTracer
+              - key: 17
+                value: AstroTracerT
+              - key: 18
+                value: AstroTracerBT
+              - key: 19
+                value: SFP
+              - key: 20
+                value: AstroTracerType3
+          - name: User Mode
+            format: sint8
+            enums:
+              - key: 0
+                value: ユーザーモードではない
+              - key: 1
+                value: ユーザーモード
+              - key: 2
+                value: ユーザーモード2
+              - key: 3
+                value: ユーザーモード3
+              - key: 4
+                value: ユーザーモード4
+              - key: 5
+                value: ユーザーモード5
+          - name: Shooting Mode Option
+            format: sint8
+            enums:
+              - key: 0
+                value: オプションなし
+              - key: 1
+                value: hyper
+              - key: 2
+                value: shift
+      - name: Metering mode
+        uuid: ED58217E-1839-43B2-BCD7-DC48C36AC0DE
+        property: [Read, Write, Notify]
+        valueFields:
+          - name: Metering mode
+            format: sint8
+            enums:
+              - key: 0
+                value: スポット
+              - key: 1
+                value: 中央重点
+              - key: 2
+                value: 分割測光
+              - key: 3
+                value: ハイライト重点
+      - name: Capture Mode
+        uuid: 78009238-AC3D-4370-9B6F-C9CE2F4E3CA8
+        property: [Read, Write, Notify]
+        valueFields:
+          - name: Capture Mode
+            format: sint8
+            enums:
+              - key: 0
+                value: image
+              - key: 2
+                value: video
+      - name: File Type
+        uuid: 95BFA8CA-4680-424D-B27C-AAC20D86E48B
+        property: [Read, Write, Notify]
+        valueFields:
+          - name: File Type
+            format: sint8
+            enums:
+              - key: 0
+                value: JPEG
+              - key: 1
+                value: PEF
+              - key: 2
+                value: DNG
+              - key: 3
+                value: JPEG + PEF
+              - key: 4
+                value: JPEG + DNG
+          - name: Raw Type
+            format: sint8
+            enums:
+              - key: 0
+                value: PEF
+              - key: 1
+                value: DNG
+          - name: CardSlot
+            format: sint8
+            enums:
+              - key: 0
+                value: sd1
+              - key: 1
+                value: sd2
+          - name: SlotMode
+            format: sint8
+            enums:
+              - key: 0
+                value: 順次
+              - key: 1
+                value: 複製
+              - key: 2
+                value: RAW/JPEG分離
+      - name: JPEG Size
+        uuid: 9838BB04-4ABB-4C12-AE22-626D02E3704B
+        property: [Read, Write, Notify]
+        valueFields:
+          - name: Resolution
+            format: sint8
+            enums:
+              - key: 0
+                value: L / スーパーファイン
+              - key: 1
+                value: M / スーパーファイン
+              - key: 2
+                value: S / スーパーファイン
+              - key: 3
+                value: XS / スーパーファイン
+              - key: 4
+                value: L / ファイン
+              - key: 5
+                value: M / ファイン
+              - key: 6
+                value: S / ファイン
+              - key: 7
+                value: XS / ファイン
+              - key: 8
+                value: L / エコノミー
+              - key: 9
+                value: M / エコノミー
+              - key: 10
+                value: S / エコノミー
+              - key: 11
+                value: XS / エコノミー
+      - name: Movie Configuration
+        uuid: 404F6626-1294-407F-AB3D-DDC6B805B6BC
+        property: [Read, Write, Notify]
+        valueFields:
+          - name: Movie Configuration
+            format: sint8
+            enums:
+              - key: 0
+                value: FullHD / 60fps
+              - key: 1
+                value: FullHD / 30fps
+              - key: 2
+                value: FullHD / 24fps
+              - key: 3
+                value: 4K / 60fps
+              - key: 4
+                value: 4K / 30fps
+              - key: 5
+                value: 4K / 24fps
+      - name: Operation Request
+        uuid: 559644B8-E0BC-4011-929B-5CF9199851E7
+        property: [Write]
+        valueFields:
+          - name: OperationCode
+            format: sint8
+            enums:
+              - key: 0
+                value: NOP
+              - key: 1
+                value: 撮影・録画開始
+              - key: 2
+                value: 撮影・録画停止
+          - name: Parameter
+            format: sint8
+            enums:
+              - key: 0
+                value: AF実施しない
+              - key: 1
+                value: AF実施する
+              - key: 2
+                value: グリーンボタン機能
+      - name: Shutter Speed List
+        uuid: B355330D-4ADC-4434-A222-7B91404B4788
+        property: [Read, Notify]
+        type: list
+        valueFields:
+          - name: Elements
+            format: sint8
+          - name: Shutter Speed
+            format: uint8
+      - name: Aperture List
+        uuid: 4866F4A9-2C83-457B-B393-B9535E1447E5
+        property: [Read, Notify]
+        type: list
+        valueFields:
+          - name: Elements
+            format: sint8
+          - name: Aperture
+            format: sint8
+      - name: ISO Sensitivity List
+        uuid: 9C83DF56-FD93-4639-8CA7-857BB7B3CA3D
+        property: [Read, Notify]
+        type: list
+        valueFields:
+          - name: Elements
+            format: sint8
+          - name: ISO Sensitivity
+            format: sint32
+      - name: Exposure Compensation List
+        uuid: 01879798-28EE-4D97-92C9-FD249C88BBCC
+        property: [Read, Notify]
+        type: list
+        valueFields:
+          - name: Elements
+            format: sint8
+          - name: Exposure Compensation
+            format: sint8
+      - name: White Balance List
+        uuid: FB673486-2A76-41B8-88F7-F88552FE5745
+        property: [Read, Notify]
+        type: list
+        valueFields:
+          - name: Elements
+            format: sint8
+          - name: White Balance
+            format: sint8
+      - name: Drive Mode List
+        uuid: F4B6C78C-7873-43F0-9748-F4406185224D
+        property: [Read, Notify]
+        type: list
+        valueFields:
+          - name: Elements
+            format: sint8
+          - name: Drive Mode
+            format: sint8
+      - name: File Type List
+        uuid: F3BFB222-C62B-4AAA-BB61-EF6486626CC8
+        property: [Read]
+        type: list
+        valueFields:
+          - name: Elements
+            format: sint8
+          - name: File Type
+            format: sint8
+      - name: Focus Mode
+        uuid: 89458F80-50A1-42C1-B031-1BC6082179C0
+        property: [Read, Notify]
+        valueFields:
+          - name: Focus Mode
+            format: sint8
+            enums:
+              - key: 0
+                value: MF
+              - key: 1
+                value: AF
+          - name: Focus Setting
+            format: sint8
+            enums:
+              - key: 0
+                value: MF
+              - key: 1
+                value: オートエリアAF
+              - key: 2
+                value: セレクトAF
+              - key: 3
+                value: ピンポイントAF
+              - key: 4
+                value: 追尾AF
+              - key: 5
+                value: コンティニュアスAF
+              - key: 6
+                value: スナップ
+              - key: 7
+                value: 無限遠
+              - key: 8
+                value: Movie
+      - name: Auto Focus Status
+        uuid: CDFC734E-EA21-427D-A69F-C1A0F7F1E9A3
+        property: [Read, Notify]
+        valueFields:
+          - name: Running
+            format: sint8
+            enums:
+              - key: 0
+                value: 停止中
+              - key: 1
+                value: 動作中
+          - name: InFocus
+            format: sint8
+            enums:
+              - key: 0
+                value: 非合焦
+              - key: 1
+                value: 合焦
+      - name: Capture Status
+        uuid: B5589C08-B5FD-46F5-BE7D-AB1B8C074CAA
+        property: [Read, Notify]
+        valueFields:
+          - name: Capturing
+            format: sint8
+            enums:
+              - key: 0
+                value: 撮影処理中でない
+              - key: 1
+                value: 撮影処理中である
+          - name: Countdown
+            format: sint8
+            enums:
+              - key: 0
+                value: カウントダウン中でない
+              - key: 1
+                value: カウントダウン中である(セルフタイマー)
+              - key: 2
+                value: 指定した時刻待ち中である(時刻指定)
+          - name: Still
+            format: sint8
+            enums:
+              - key: 0
+                value: その他
+              - key: 1
+                value: 連続撮影中
+              - key: 2
+                value: ブラケット撮影中
+              - key: 3
+                value: 多重露出中
+              - key: 4
+                value: インターバル撮影中
+              - key: 5
+                value: インターバル合成中
+          - name: Movie
+            format: sint8
+            enums:
+              - key: 0
+                value: その他
+              - key: 1
+                value: 録画中
+          - name: Type3CaptureState
+            format: sint8
+            enums:
+              - key: 0
+                value: 撮影待機中
+              - key: 1
+                value: 予備撮影中
+              - key: 2
+                value: 本撮影中
+          - name: Type3PreCaptureResult
+            format: sint8
+            enums:
+              - key: 0
+                value: エラーなし
+              - key: 1
+                value: 移動量検出不可エラー
+              - key: 2
+                value: 露光時間エラー
+          - name: AstroTrackingTime
+            format: uint16
+      - name: Shot Count
+        uuid: 12D262BA-D8BF-44B0-8E85-C414A40230A9
+        property: [Read, Notify]
+        valueFields:
+          - name: current
+            format: sint8
+          - name: total
+            format: sint8
+      - name: Self Timer
+        uuid: 009A8E70-B306-4451-B943-7F54392EB971
+        property: [Write]
+        valueFields:
+          - name: Countdown Cancel
+            format: sint8
+            enums:
+              - key: 0
+                value: other
+              - key: 1
+                value: キャンセルする
+          - name: Remocon
+            format: sint8
+            enums:
+              - key: 0
+                value: オフ
+              - key: 1
+                value: オン
+      - name: Shooting Mode List
+        uuid: F662DCD8-AC6E-4E02-A4B2-CE92CD44C7C3
+        property: [Read, Notify]
+        type: list
+        valueFields:
+          - name: Elements
+            format: sint8
+          - name: Shooting Mode
+            format: sint8
+      - name: Focus Setting List
+        uuid: 31B28DAB-BD3C-4C27-AA08-F379BF737C1E
+        property: [Read, Notify]
+        type: list
+        valueFields:
+          - name: Elements
+            format: sint8
+          - name: Focus Setting
+            format: sint8
+  - name: Camera Service
+    uuid: 4B445988-CAA0-4DD3-941D-37B4F52ACA86
+    characteristics:
+      - name: Camera Service Notification
+        uuid: FAA0AEAF-1654-4842-A139-F4E1C1E722AC
+        property: [Read, Notify]
+        type: variable
+        valueFields:
+          - name: Number of Notification
+            format: sint8
+          - name: Include Changed Value
+            format: sint8
+            enums:
+              - key: 0
+                value: not include
+              - key: 1
+                value: include
+          - name: UUID
+            format: sint128
+          - name: Changed Value
+            format: variable
+      - name: Camera Power
+        uuid: B58CE84C-0666-4DE9-BEC8-2D27B27B3211
+        property: [Read, Write, Notify]
+        valueFields:
+          - name: Camera Power
+            format: sint8
+            enums:
+              - key: 0
+                value: 'off'
+              - key: 1
+                value: 'on'
+              - key: 2
+                value: sleep
+      - name: Battery Level
+        uuid: 875FC41D-4980-434C-A653-FD4A4D4410C4
+        property: [Read, Notify]
+        valueFields:
+          - name: Level
+            format: sint8
+          - name: Used
+            format: sint8
+            enums:
+              - key: 0
+                value: Battery
+              - key: 1
+                value: AcAdapter
+      - name: Date Time
+        uuid: FA46BBDD-8A8F-4796-8CF3-AA58949B130A
+        property: [Read, Write]
+        valueFields:
+          - name: Year
+            format: sint16
+          - name: Month
+            format: sint8
+          - name: Day
+            format: sint8
+          - name: Hours
+            format: sint8
+          - name: Minutes
+            format: sint8
+          - name: Seconds
+            format: sint8
+      - name: Operation Mode List
+        uuid: 430B80A3-CC2E-4EC2-AACD-08610281FF38
+        property: [Read, Notify]
+        type: list
+        valueFields:
+          - name: Elements
+            format: sint8
+          - name: Operation Mode
+            format: sint8
+      - name: Operation Mode
+        uuid: 1452335A-EC7F-4877-B8AB-0F72E18BB295
+        property: [Read, Write, Notify]
+        valueFields:
+          - name: Operation Mode
+            format: sint8
+            enums:
+              - key: 0
+                value: Capture
+              - key: 1
+                value: Playback
+              - key: 2
+                value: BLE Startup
+              - key: 3
+                value: Other
+              - key: 4
+                value: PowerOffTransfer
+      - name: GEO Tag
+        uuid: A36AFDCF-6B67-4046-9BE7-28FB67DBC071
+        property: [Read, Write, Notify]
+        valueFields:
+          - name: Enable
+            format: sint8
+      - name: Storage Information
+        uuid: A0C10148-8865-4470-9631-8F36D79A41A5
+        property: [Read, Notify]
+        type: list
+        valueFields:
+          - name: Elements
+            format: sint8
+          - name: Type
+            format: sint8
+            enums:
+              - key: 0
+                value: Internal Memory
+              - key: 1
+                value: SD Slot1
+              - key: 2
+                value: SD Slot2
+          - name: Existence
+            format: sint8
+            enums:
+              - key: 0
+                value: ストレージ(カード)なし
+              - key: 1
+                value: ストレージ(カード)あり
+          - name: Locked
+            format: sint8
+            enums:
+              - key: 0
+                value: アンロック
+              - key: 1
+                value: ロック
+          - name: Available
+            format: sint8
+            enums:
+              - key: 0
+                value: 使用不可 (エラーなどで)
+              - key: 1
+                value: 使用可能
+          - name: Formatted
+            format: sint8
+            enums:
+              - key: 0
+                value: 未フォーマット
+              - key: 1
+                value: フォーマット済み
+          - name: Remaining Pictures
+            format: sint32
+          - name: Remaining Videos Seconds
+            format: sint32
+          - name: File Type
+            format: sint8
+          - name: Active
+            format: sint8
+            enums:
+              - key: 0
+                value: 書き込み対象外
+              - key: 1
+                value: 書き込み対象
+      - name: File Transfer List
+        uuid: D9AE1C06-447D-4DEA-8B7D-FC8B19C2CDAE
+        property: [Read, Notify]
+        valueFields:
+          - name: Not empty
+            format: sint8
+            enums:
+              - key: 0
+                value: 転送するファイルがない
+              - key: 1
+                value: 転送するファイルがある
+          - name: Changed
+            format: sint8
+            enums:
+              - key: 0
+                value: リストは変化していない
+              - key: 1
+                value: リストが変化した
+      - name: Power Off During File Transfer
+        uuid: BD6725FC-5D16-496A-A48A-F784594C8ECB
+        property: [Read, Write, Notify]
+        valueFields:
+          - name: Behavior
+            format: sint8
+            enums:
+              - key: 0
+                value: 転送を中断して電源OFFする
+              - key: 1
+                value: 転送完了後に電源OFFする
+          - name: Auto Resize
+            format: sint8
+            enums:
+              - key: 0
+                value: リサイズせずに転送する
+              - key: 1
+                value: リサイズして転送する
+      - name: Grad ND
+        uuid: 209F9869-8540-460E-97A6-5C3AC08F2C73
+        property: [Read, Notify]
+        valueFields:
+          - name: GradND Mode
+            format: sint8
+            enums:
+              - key: 0
+                value: Off
+              - key: 1
+                value: Normal
+              - key: 2
+                value: Reverse
+              - key: 3
+                value: Custom1
+              - key: 4
+                value: Custom2
+              - key: 5
+                value: Custom3
+  - name: GPS Control Command
+    uuid: 84A0DD62-E8AA-4D0F-91DB-819B6724C69E
+    characteristics:
+      - name: GPS Information
+        uuid: 28F59D60-8B8E-4FCD-A81F-61BDB46595A9
+        property: [Read, Write]
+        valueFields:
+          - name: Latitude
+            format: float64
+          - name: Longitude
+            format: float64
+          - name: Altitude
+            format: float64
+          - name: Year
+            format: sint16
+          - name: Month
+            format: sint8
+          - name: Day
+            format: sint8
+          - name: Hours
+            format: sint8
+          - name: Minutes
+            format: sint8
+          - name: Seconds
+            format: sint8
+          - name: Datum
+            format: sint8
+            enums:
+              - key: 0
+                value: WGS84
+  - name: WLAN Control Command
+    uuid: F37F568F-9071-445D-A938-5441F2E82399
+    characteristics:
+      - name: Network Type
+        uuid: 9111CDD0-9F01-45C4-A2D4-E09E8FB0424D
+        property: [Read, Write, Notify]
+        valueFields:
+          - name: Network Type
+            format: sint8
+            enums:
+              - key: 0
+                value: 'off'
+              - key: 1
+                value: AP
+      - name: SSID
+        uuid: 90638E5A-E77D-409D-B550-78F7E1CA5AB4
+        property: [Read, Write]
+        valueFields:
+          - name: SSID
+            format: utf8s
+      - name: Passphrase
+        uuid: 0F38279C-FE9E-461B-8596-81287E8C9A81
+        property: [Read, Write]
+        valueFields:
+          - name: Passphrase
+            format: utf8s
+      - name: Channel
+        uuid: 51DE6EBC-0F22-4357-87E4-B1FA1D385AB8
+        property: [Read, Write]
+        valueFields:
+          - name: Channel
+            format: sint8
+            enums:
+              - key: 0
+                value: Auto
+              - key: 1
+                value: 1ch
+              - key: 2
+                value: 2ch
+              - key: 3
+                value: 3ch
+              - key: 4
+                value: 4ch
+              - key: 5
+                value: 5ch
+              - key: 6
+                value: 6ch
+              - key: 7
+                value: 7ch
+              - key: 8
+                value: 8ch
+              - key: 9
+                value: 9ch
+              - key: 10
+                value: 10ch
+              - key: 11
+                value: 11ch
+  - name: Bluetooth Control Command
+    uuid: 0F291746-0C80-4726-87A7-3C501FD3B4B6
+    characteristics:
+      - name: BLE Enable Condition
+        uuid: D8676C92-DC4E-4D9E-ACCE-B9E251DDCC0C
+        property: [Read, Write, Notify]
+        valueFields:
+          - name: BLE Enable Condition
+            format: sint8
+            enums:
+              - key: 0
+                value: disable
+              - key: 1
+                value: enable anytime
+              - key: 2
+                value: enable power on
+      - name: Paired Device Name
+        uuid: FE3A32F8-A189-42DE-A391-BC81AE4DAA76
+        property: [Write]
+        valueFields:
+          - name: Paired Device Name
+            format: utf8s

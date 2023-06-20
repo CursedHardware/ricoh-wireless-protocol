@@ -1,0 +1,29 @@
+companyId: 0x065F
+format:
+  - value: 0xDA
+    type:
+      - name: Model Code
+        value: 0x01
+        dataLength: 1
+        enums:
+          - key: 0x00
+            value: PENTAX K-3 Mark III
+          - key: 0x01
+            value: RICOH GR III
+          - key: 0x02
+            value: PENTAX K-3 Mark III
+          - key: 0x03
+            value: RICOH GR IIIx
+          - key: 0x04
+            value: PENTAX K-3 Mark III Monochrome
+      - name: Serial Number
+        value: 0x02
+        dataLength: 4
+      - name: Camera Power
+        value: 0x03
+        dataLength: 1
+        enums:
+          - key: 0x00
+            value: OFF
+          - key: 0x01
+            value: ON

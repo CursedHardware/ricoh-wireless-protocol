@@ -1,0 +1,70 @@
+settings:
+  - support_class: 'CameraTime'
+    rest_key: 'datetime'
+    rest_value:
+  - support_class: 'Channel'
+    rest_key: 'channel'
+    rest_value:
+      - { name: 'N1', val: '1' }
+      - { name: 'N2', val: '2' }
+      - { name: 'N3', val: '3' }
+      - { name: 'N4', val: '4' }
+      - { name: 'N5', val: '5' }
+      - { name: 'N6', val: '6' }
+      - { name: 'N7', val: '7' }
+      - { name: 'N8', val: '8' }
+      - { name: 'N9', val: '9' }
+      - { name: 'N10', val: '10' }
+      - { name: 'N11', val: '11' }
+  - support_class: 'Key'
+    rest_key: 'key'
+    rest_value:
+  - support_class: 'SSID'
+    rest_key: 'ssid'
+    rest_value:
+  - support_class: 'DualCardSlotsMode'
+    rest_key: 'slotMode'
+    rest_value:
+      - { name: 'SEQUENTIAL_USE', val: 'reserve' }
+      - { name: 'SAVE_TO_BOTH', val: 'copy' }
+      - { name: 'SEPARATE_RAW_JPEG', val: 'separate' }
+  - support_class: 'CardSlot'
+    rest_key: 'cardSlot'
+    rest_value:
+      - { name: 'SD1', val: 'sd1' }
+      - { name: 'SD2', val: 'sd2' }
+  - support_class: 'LiveViewSpecification'
+    rest_key: 'focusEffectiveArea'
+    rest_value:
+  - support_class: 'ForcePowerOffDuringFileTransferEnable'
+    rest_key: 'powerOffTransfer'
+    rest_value:
+      - { name: 'TRUE', val: 'on' }
+      - { name: 'FALSE', val: 'off' }
+  - support_class: 'AutoResizeEnable'
+    rest_key: 'autoResize'
+    rest_value:
+      - { name: 'TRUE', val: 'on' }
+      - { name: 'FALSE', val: 'off' }
+  - support_class: 'GEOTaggingEnable'
+    rest_key: 'geoTagging'
+    rest_value:
+      - { name: 'TRUE', val: 'on' }
+      - { name: 'FALSE', val: 'off' }
+  - support_class: 'GPSInformation'
+    rest_key: 'gpsInfo'
+    rest_value:
+  - support_class: 'BLEEnableCondition'
+    rest_key: 'bleEnableCondition'
+    rest_value:
+      - { name: 'DISABLE', val: 'disable' }
+      - { name: 'ENABLE_ANYTIME', val: 'enableAnytime' }
+      - { name: 'ENABLE_POWER_ON', val: 'enablePowerOn' }
+  - support_class: 'OperationMode'
+    rest_key: 'operationMode'
+    rest_value:
+      - { name: 'CAPTURE', val: 'capture' }
+      - { name: 'PLAYBACK', val: 'playback' }
+      - { name: 'BLE_STARTUP', val: 'bleStartup' }
+      - { name: 'POWER_OFF_TRANSFER', val: 'powerOffTransfer' }
+      - { name: 'UNKNOWN', val: 'other' }

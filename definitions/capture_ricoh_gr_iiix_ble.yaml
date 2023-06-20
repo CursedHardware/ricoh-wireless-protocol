@@ -1,0 +1,435 @@
+settings:
+  - support_class: 'ISO'
+    chara_name: 'ISO Sensitivity'
+    field_name: 'ISO Sensitivity'
+    mapping:
+      - { name: 'AUTO', val: 'AUTO' }
+      - { name: 'ISO100', val: '100' }
+      - { name: 'ISO125', val: '125' }
+      - { name: 'ISO140', val: '140' }
+      - { name: 'ISO160', val: '160' }
+      - { name: 'ISO200', val: '200' }
+      - { name: 'ISO250', val: '250' }
+      - { name: 'ISO280', val: '280' }
+      - { name: 'ISO320', val: '320' }
+      - { name: 'ISO400', val: '400' }
+      - { name: 'ISO500', val: '500' }
+      - { name: 'ISO560', val: '560' }
+      - { name: 'ISO640', val: '640' }
+      - { name: 'ISO800', val: '800' }
+      - { name: 'ISO1000', val: '1000' }
+      - { name: 'ISO1100', val: '1100' }
+      - { name: 'ISO1250', val: '1250' }
+      - { name: 'ISO1600', val: '1600' }
+      - { name: 'ISO2000', val: '2000' }
+      - { name: 'ISO2200', val: '2200' }
+      - { name: 'ISO2500', val: '2500' }
+      - { name: 'ISO3200', val: '3200' }
+      - { name: 'ISO4000', val: '4000' }
+      - { name: 'ISO4500', val: '4500' }
+      - { name: 'ISO5000', val: '5000' }
+      - { name: 'ISO6400', val: '6400' }
+      - { name: 'ISO8000', val: '8000' }
+      - { name: 'ISO9000', val: '9000' }
+      - { name: 'ISO10000', val: '10000' }
+      - { name: 'ISO12800', val: '12800' }
+      - { name: 'ISO16000', val: '16000' }
+      - { name: 'ISO18000', val: '18000' }
+      - { name: 'ISO20000', val: '20000' }
+      - { name: 'ISO25600', val: '25600' }
+      - { name: 'ISO32000', val: '32000' }
+      - { name: 'ISO36000', val: '36000' }
+      - { name: 'ISO40000', val: '40000' }
+      - { name: 'ISO51200', val: '51200' }
+      - { name: 'ISO64000', val: '64000' }
+      - { name: 'ISO72000', val: '72000' }
+      - { name: 'ISO80000', val: '80000' }
+      - { name: 'ISO102400', val: '102400' }
+      - { name: 'ISO128000', val: '128000' }
+      - { name: 'ISO144000', val: '144000' }
+      - { name: 'ISO160000', val: '160000' }
+      - { name: 'ISO204800', val: '204800' }
+      - { name: 'ISO256000', val: '256000' }
+      - { name: 'ISO288000', val: '288000' }
+      - { name: 'ISO320000', val: '320000' }
+      - { name: 'ISO409600', val: '409600' }
+      - { name: 'ISO512000', val: '512000' }
+      - { name: 'ISO576000', val: '576000' }
+      - { name: 'ISO640000', val: '640000' }
+      - { name: 'ISO819200', val: '819200' }
+  - support_class: 'ShutterSpeed'
+    chara_name: 'Shutter Speed'
+    field_name: 'Shutter Speed'
+    mapping:
+      - { name: 'SS1_25000', val: '1/25000' }
+      - { name: 'SS1_24000', val: '1/24000' }
+      - { name: 'SS1_20000', val: '1/20000' }
+      - { name: 'SS1_16000', val: '1/16000' }
+      - { name: 'SS1_12500', val: '1/12500' }
+      - { name: 'SS1_12000', val: '1/12000' }
+      - { name: 'SS1_10000', val: '1/10000' }
+      - { name: 'SS1_8000', val: '1/8000' }
+      - { name: 'SS1_6400', val: '1/6400' }
+      - { name: 'SS1_6000', val: '1/6000' }
+      - { name: 'SS1_5000', val: '1/5000' }
+      - { name: 'SS1_4000', val: '1/4000' }
+      - { name: 'SS1_3200', val: '1/3200' }
+      - { name: 'SS1_3000', val: '1/3000' }
+      - { name: 'SS1_2500', val: '1/2500' }
+      - { name: 'SS1_2000', val: '1/2000' }
+      - { name: 'SS1_1600', val: '1/1600' }
+      - { name: 'SS1_1500', val: '1/1500' }
+      - { name: 'SS1_1250', val: '1/1250' }
+      - { name: 'SS1_1000', val: '1/1000' }
+      - { name: 'SS1_800', val: '1/800' }
+      - { name: 'SS1_750', val: '1/750' }
+      - { name: 'SS1_640', val: '1/640' }
+      - { name: 'SS1_500', val: '1/500' }
+      - { name: 'SS1_400', val: '1/400' }
+      - { name: 'SS1_350', val: '1/350' }
+      - { name: 'SS1_320', val: '1/320' }
+      - { name: 'SS1_250', val: '1/250' }
+      - { name: 'SS1_200', val: '1/200' }
+      - { name: 'SS1_180', val: '1/180' }
+      - { name: 'SS1_160', val: '1/160' }
+      - { name: 'SS1_125', val: '1/125' }
+      - { name: 'SS1_100', val: '1/100' }
+      - { name: 'SS1_90', val: '1/90' }
+      - { name: 'SS1_80', val: '1/80' }
+      - { name: 'SS1_60', val: '1/60' }
+      - { name: 'SS1_50', val: '1/50' }
+      - { name: 'SS1_45', val: '1/45' }
+      - { name: 'SS1_40', val: '1/40' }
+      - { name: 'SS1_30', val: '1/30' }
+      - { name: 'SS1_25', val: '1/25' }
+      - { name: 'SS1_20', val: '1/20' }
+      - { name: 'SS1_15', val: '1/15' }
+      - { name: 'SS1_13', val: '1/13' }
+      - { name: 'SS1_10', val: '1/10' }
+      - { name: 'SS1_8', val: '1/8' }
+      - { name: 'SS1_6', val: '1/6' }
+      - { name: 'SS1_5', val: '1/5' }
+      - { name: 'SS1_4', val: '1/4' }
+      - { name: 'SS3_10', val: '0.3' }
+      - { name: 'SS4_10', val: '0.4' }
+      - { name: 'SS5_10', val: '0.5' }
+      - { name: 'SS6_10', val: '0.6' }
+      - { name: 'SS7_10', val: '0.7' }
+      - { name: 'SS8_10', val: '0.8' }
+      - { name: 'SS1', val: '1' }
+      - { name: 'SS13_10', val: '1.3' }
+      - { name: 'SS15_10', val: '1.5' }
+      - { name: 'SS16_10', val: '1.6' }
+      - { name: 'SS2', val: '2' }
+      - { name: 'SS25_10', val: '2.5' }
+      - { name: 'SS3', val: '3' }
+      - { name: 'SS4', val: '4' }
+      - { name: 'SS5', val: '5' }
+      - { name: 'SS6', val: '6' }
+      - { name: 'SS8', val: '8' }
+      - { name: 'SS10', val: '10' }
+      - { name: 'SS13', val: '13' }
+      - { name: 'SS15', val: '15' }
+      - { name: 'SS20', val: '20' }
+      - { name: 'SS25', val: '25' }
+      - { name: 'SS30', val: '30' }
+      - { name: 'SS40', val: '40' }
+      - { name: 'SS50', val: '50' }
+      - { name: 'SS60', val: '60' }
+      - { name: 'SS70', val: '70' }
+      - { name: 'SS80', val: '80' }
+      - { name: 'SS90', val: '90' }
+      - { name: 'SS100', val: '100' }
+      - { name: 'SS110', val: '110' }
+      - { name: 'SS120', val: '120' }
+      - { name: 'SS130', val: '130' }
+      - { name: 'SS140', val: '140' }
+      - { name: 'SS150', val: '150' }
+      - { name: 'SS160', val: '160' }
+      - { name: 'SS170', val: '170' }
+      - { name: 'SS180', val: '180' }
+      - { name: 'SS190', val: '190' }
+      - { name: 'SS200', val: '200' }
+      - { name: 'SS210', val: '210' }
+      - { name: 'SS220', val: '220' }
+      - { name: 'SS230', val: '230' }
+      - { name: 'SS240', val: '240' }
+      - { name: 'SS250', val: '250' }
+      - { name: 'SS260', val: '260' }
+      - { name: 'SS270', val: '270' }
+      - { name: 'SS280', val: '280' }
+      - { name: 'SS290', val: '290' }
+      - { name: 'SS300', val: '300' }
+      - { name: 'SS360', val: '360' }
+      - { name: 'SS420', val: '420' }
+      - { name: 'SS480', val: '480' }
+      - { name: 'SS540', val: '540' }
+      - { name: 'SS600', val: '600' }
+      - { name: 'SS660', val: '660' }
+      - { name: 'SS720', val: '720' }
+      - { name: 'SS780', val: '780' }
+      - { name: 'SS840', val: '840' }
+      - { name: 'SS900', val: '900' }
+      - { name: 'SS960', val: '960' }
+      - { name: 'SS1020', val: '1020' }
+      - { name: 'SS1080', val: '1080' }
+      - { name: 'SS1140', val: '1140' }
+      - { name: 'SS1200', val: '1200' }
+      - { name: 'NULL', val: '撮影モードB、T' }
+  - support_class: 'StillImageQuality'
+    chara_name: 'JPEG Size'
+    field_name: 'Resolution'
+    mapping:
+      - { name: 'LARGE_BEST', val: 'L' }
+      - { name: 'MEDIUM_BEST', val: 'M' }
+      - { name: 'SMALL_BEST', val: 'S' }
+      - { name: 'EXTRA_SMALL_BEST', val: 'XS' }
+  - support_class: 'WhiteBalance'
+    chara_name: 'White Balance'
+    field_name: 'White Balance'
+    mapping:
+      - { name: 'AUTO', val: 'auto' }
+      - { name: 'DAYLIGHT', val: 'daylight' }
+      - { name: 'SHADE', val: 'shade' }
+      - { name: 'CLOUDY', val: 'cloudy-daylight' }
+      - { name: 'TUNGSTEN', val: 'incandescent' }
+      - { name: 'FLUORESCENT_DAYLIGHT', val: 'dayLightFluorescent' }
+      - { name: 'FLUORESCENT_DAYLIGHT_WHITE', val: 'dayWhiteFluorescent' }
+      - { name: 'FLUORESCENT_COOL_WHITE', val: 'fluorescent' }
+      - { name: 'FLUORESCENT_WARM_WHITE', val: 'bulbFluorescent' }
+      - { name: 'COLOR_TEMPERATURE', val: 'colortemperature' }
+      - { name: 'COLOR_TEMPERATURE2', val: 'colortemperature2' }
+      - { name: 'COLOR_TEMPERATURE3', val: 'colortemperature3' }
+      - { name: 'MANUAL', val: 'Manual' }
+      - { name: 'MANUAL2', val: 'Manual2' }
+      - { name: 'MANUAL3', val: 'Manual3' }
+      - { name: 'CTE', val: 'CTE' }
+      - { name: 'MULTI_AUTO', val: 'multipatternauto' }
+  - support_class: 'FNumber'
+    chara_name: 'Aperture'
+    field_name: 'Aperture'
+    mapping:
+      - { name: 'AUTO', val: 'AUTO' }
+      - { name: 'F1_0', val: '1.0' }
+      - { name: 'F1_1', val: '1.1' }
+      - { name: 'F1_3', val: '1.3' }
+      - { name: 'F1_4', val: '1.4' }
+      - { name: 'F1_6', val: '1.6' }
+      - { name: 'F1_8', val: '1.8' }
+      - { name: 'F2_0', val: '2.0' }
+      - { name: 'F2_2', val: '2.2' }
+      - { name: 'F2_5', val: '2.5' }
+      - { name: 'F2_8', val: '2.8' }
+      - { name: 'F3_2', val: '3.2' }
+      - { name: 'F3_5', val: '3.5' }
+      - { name: 'F4_0', val: '4.0' }
+      - { name: 'F4_5', val: '4.5' }
+      - { name: 'F5_0', val: '5.0' }
+      - { name: 'F5_6', val: '5.6' }
+      - { name: 'F6_3', val: '6.3' }
+      - { name: 'F7_1', val: '7.1' }
+      - { name: 'F8_0', val: '8.0' }
+      - { name: 'F9_0', val: '9.0' }
+      - { name: 'F10', val: '10' }
+      - { name: 'F11', val: '11' }
+      - { name: 'F13', val: '13' }
+      - { name: 'F14', val: '14' }
+      - { name: 'F16', val: '16' }
+      - { name: 'F18', val: '18' }
+      - { name: 'F20', val: '20' }
+      - { name: 'F22', val: '22' }
+      - { name: 'F25', val: '25' }
+      - { name: 'F29', val: '29' }
+      - { name: 'F32', val: '32' }
+      - { name: 'F36', val: '36' }
+      - { name: 'F40', val: '40' }
+      - { name: 'F45', val: '45' }
+      - { name: 'F51', val: '51' }
+      - { name: 'F57', val: '57' }
+      - { name: 'F64', val: '64' }
+      - { name: 'F72', val: '72' }
+      - { name: 'F81', val: '81' }
+      - { name: 'F90', val: '90' }
+      - { name: 'F1_2', val: '1.2' }
+      - { name: 'F1_7', val: '1.7' }
+      - { name: 'F2_4', val: '2.4' }
+      - { name: 'F6_7', val: '6.7' }
+      - { name: 'F9_5', val: '9.5' }
+      - { name: 'F19', val: '19' }
+      - { name: 'F27', val: '27' }
+      - { name: 'F38', val: '38' }
+      - { name: 'F54', val: '54' }
+      - { name: 'F76', val: '76' }
+  - support_class: 'ExposureCompensation'
+    chara_name: 'Exposure Compensation'
+    field_name: 'Exposure Compensation'
+    mapping:
+      - { name: 'EC_NEGATIVE8_0', val: '-8.0' }
+      - { name: 'EC_NEGATIVE7_7', val: '-7.7' }
+      - { name: 'EC_NEGATIVE7_5', val: '-7.5' }
+      - { name: 'EC_NEGATIVE7_3', val: '-7.3' }
+      - { name: 'EC_NEGATIVE7_0', val: '-7.0' }
+      - { name: 'EC_NEGATIVE6_7', val: '-6.7' }
+      - { name: 'EC_NEGATIVE6_5', val: '-6.5' }
+      - { name: 'EC_NEGATIVE6_3', val: '-6.3' }
+      - { name: 'EC_NEGATIVE6_0', val: '-6.0' }
+      - { name: 'EC_NEGATIVE5_7', val: '-5.7' }
+      - { name: 'EC_NEGATIVE5_5', val: '-5.5' }
+      - { name: 'EC_NEGATIVE5_3', val: '-5.3' }
+      - { name: 'EC_NEGATIVE5_0', val: '-5.0' }
+      - { name: 'EC_NEGATIVE4_7', val: '-4.7' }
+      - { name: 'EC_NEGATIVE4_5', val: '-4.5' }
+      - { name: 'EC_NEGATIVE4_3', val: '-4.3' }
+      - { name: 'EC_NEGATIVE4_0', val: '-4.0' }
+      - { name: 'EC_NEGATIVE3_7', val: '-3.7' }
+      - { name: 'EC_NEGATIVE3_5', val: '-3.5' }
+      - { name: 'EC_NEGATIVE3_3', val: '-3.3' }
+      - { name: 'EC_NEGATIVE3_0', val: '-3.0' }
+      - { name: 'EC_NEGATIVE2_7', val: '-2.7' }
+      - { name: 'EC_NEGATIVE2_5', val: '-2.5' }
+      - { name: 'EC_NEGATIVE2_3', val: '-2.3' }
+      - { name: 'EC_NEGATIVE2_0', val: '-2.0' }
+      - { name: 'EC_NEGATIVE1_7', val: '-1.7' }
+      - { name: 'EC_NEGATIVE1_5', val: '-1.5' }
+      - { name: 'EC_NEGATIVE1_3', val: '-1.3' }
+      - { name: 'EC_NEGATIVE1_0', val: '-1.0' }
+      - { name: 'EC_NEGATIVE0_7', val: '-0.7' }
+      - { name: 'EC_NEGATIVE0_5', val: '-0.5' }
+      - { name: 'EC_NEGATIVE0_3', val: '-0.3' }
+      - { name: 'EC0_0', val: '0.0' }
+      - { name: 'EC0_3', val: '0.3' }
+      - { name: 'EC0_5', val: '0.5' }
+      - { name: 'EC0_7', val: '0.7' }
+      - { name: 'EC1_0', val: '1.0' }
+      - { name: 'EC1_3', val: '1.3' }
+      - { name: 'EC1_5', val: '1.5' }
+      - { name: 'EC1_7', val: '1.7' }
+      - { name: 'EC2_0', val: '2.0' }
+      - { name: 'EC2_3', val: '2.3' }
+      - { name: 'EC2_5', val: '2.5' }
+      - { name: 'EC2_7', val: '2.7' }
+      - { name: 'EC3_0', val: '3.0' }
+      - { name: 'EC3_3', val: '3.3' }
+      - { name: 'EC3_5', val: '3.5' }
+      - { name: 'EC3_7', val: '3.7' }
+      - { name: 'EC4_0', val: '4.0' }
+      - { name: 'EC4_3', val: '4.3' }
+      - { name: 'EC4_5', val: '4.5' }
+      - { name: 'EC4_7', val: '4.7' }
+      - { name: 'EC5_0', val: '5.0' }
+      - { name: 'EC5_3', val: '5.3' }
+      - { name: 'EC5_5', val: '5.5' }
+      - { name: 'EC5_7', val: '5.7' }
+      - { name: 'EC6_0', val: '6.0' }
+      - { name: 'EC6_3', val: '6.3' }
+      - { name: 'EC6_5', val: '6.5' }
+      - { name: 'EC6_7', val: '6.7' }
+      - { name: 'EC7_0', val: '7.0' }
+      - { name: 'EC7_3', val: '7.3' }
+      - { name: 'EC7_5', val: '7.5' }
+      - { name: 'EC7_7', val: '7.7' }
+      - { name: 'EC8_0', val: '8.0' }
+  - support_class: 'ExposureProgram'
+    chara_name: 'Shooting Mode'
+    field_name: 'Shooting Mode'
+    mapping:
+      - { name: 'PROGRAM', val: 'P' }
+      - { name: 'APERTURE_PRIORITY', val: 'Av' }
+      - { name: 'SHUTTER_SPEED_PRIORITY', val: 'Tv' }
+      - { name: 'MANUAL', val: 'M' }
+      - { name: 'BULB', val: 'B' }
+      - { name: 'BULB_TIMER', val: 'BT' }
+      - { name: 'TIME', val: 'T' }
+      - { name: 'SFP', val: 'SFP' }
+  - support_class: 'UserExposureProgram'
+    chara_name: 'Shooting Mode'
+    field_name: 'Shooting Mode'
+    field_name2: 'User Mode'
+    mapping:
+      - { name: 'NONE', val: '', val2: 'ユーザーモードではない' }
+      - { name: 'USER', val: '', val2: 'ユーザーモード' }
+      - { name: 'USER2', val: '', val2: 'ユーザーモード2' }
+      - { name: 'USER3', val: '', val2: 'ユーザーモード3' }
+  - support_class: 'StillImageCaptureFormat'
+    chara_name: 'File Type'
+    field_name: 'File Type'
+    mapping:
+      - { name: 'JPEG', val: 'JPEG' }
+      - { name: 'PEF', val: 'PEF' }
+      - { name: 'DNG', val: 'DNG' }
+      - { name: 'PEF_AND_JPEG', val: 'JPEG + PEF' }
+      - { name: 'DNG_AND_JPEG', val: 'JPEG + DNG' }
+  - support_class: 'MovieCaptureFormat'
+    chara_name: 'Movie Configuration'
+    field_name: 'Movie Configuration'
+    mapping:
+      - { name: 'FULLHD24P', val: 'FullHD / 24fps' }
+      - { name: 'FULLHD30P', val: 'FullHD / 30fps' }
+      - { name: 'FULLHD60P', val: 'FullHD / 60fps' }
+  - support_class: 'ExposureMeteringMode'
+    chara_name: 'Metering mode'
+    field_name: 'Metering mode'
+    mapping:
+      - { name: 'MULTI', val: '分割測光' }
+      - { name: 'CENTER', val: '中央重点' }
+      - { name: 'SPOT', val: 'スポット' }
+      - { name: 'HIGHT_LIGHT', val: 'ハイライト重点' }
+  - support_class: 'FocusMethod'
+    chara_name: 'Focus Mode'
+    field_name: 'Focus Mode'
+    mapping:
+      - { name: 'AUTO', val: 'AF' }
+      - { name: 'MANUAL', val: 'MF' }
+  - support_class: 'CaptureMethod'
+    chara_name: 'Drive Mode'
+    field_name: 'Drive Mode'
+    mapping:
+      - { name: 'STILL_IMAGE', val: '1コマ撮影' }
+      - { name: 'CONTINUOUS', val: '連続撮影' }
+      - { name: 'SELFTIMER_10S', val: '1コマ撮影 (セルフ10秒)' }
+      - { name: 'SELFTIMER_2S', val: '1コマ撮影 (セルフ2秒)' }
+      - { name: 'BRACKET', val: 'ブラケット撮影' }
+      - { name: 'BRACKET_SELFTIMER_10S', val: 'ブラケット撮影 (セルフ10秒)' }
+      - { name: 'BRACKET_SELFTIMER_2S', val: 'ブラケット撮影 (セルフ2秒)' }
+      - { name: 'MULTI_EXPOSURE', val: '多重露出' }
+      - { name: 'MULTI_EXPOSURE_SELFTIMER_10S', val: '多重露出 (セルフ10秒)' }
+      - { name: 'MULTI_EXPOSURE_SELFTIMER_2S', val: '多重露出 (セルフ2秒)' }
+      - { name: 'INTERVAL', val: 'インターバル撮影' }
+      - { name: 'INTERVAL_SELFTIMER_10S', val: 'インターバル撮影 (セルフ10秒)' }
+      - { name: 'INTERVAL_SELFTIMER_2S', val: 'インターバル撮影 (セルフ2秒)' }
+      - { name: 'INTERVAL_COMP', val: 'インターバル合成' }
+      - { name: 'INTERVAL_COMP_SELFTIMER_10S', val: 'インターバル合成 (セルフ10秒)' }
+      - { name: 'INTERVAL_COMP_SELFTIMER_2S', val: 'インターバル合成 (セルフ2秒)' }
+  - support_class: 'NumTotalShots'
+    chara_name: 'Shot Count'
+    field_name: 'total'
+  - support_class: 'OnePushBracketEnable'
+  - support_class: 'CaptureMode'
+    chara_name: 'Capture Mode'
+    field_name: 'Capture Mode'
+    mapping:
+      - { name: 'STILL', val: 'image' }
+      - { name: 'MOVIE', val: 'video' }
+  - support_class: 'HyperExposureProgramEnable'
+  - support_class: 'FocusSetting'
+    chara_name: 'Focus Mode'
+    field_name: 'Focus Mode'
+    field_name2: 'Focus Setting'
+    mapping:
+      - { name: 'MF', val: '', val2: 'MF' }
+      - { name: 'AUTO_AREA_AF', val: '', val2: 'オートエリアAF' }
+      - { name: 'SELECT_AF', val: '', val2: 'セレクトAF' }
+      - { name: 'PINPOINT_AF', val: '', val2: 'ピンポイントAF' }
+      - { name: 'TRACKING_AF', val: '', val2: '追尾AF' }
+      - { name: 'CONTINUOUS_AF', val: '', val2: 'コンティニュアスAF' }
+      - { name: 'SNAP', val: '', val2: 'スナップ' }
+      - { name: 'INFINITY', val: '', val2: '無限遠' }
+      - { name: 'MOVIE', val: '', val2: 'Movie' }
+  - support_class: 'OperationMode'
+    chara_name: 'Operation Mode'
+    field_name: 'Operation Mode'
+    mapping:
+      - { name: 'CAPTURE', val: 'Capture' }
+      - { name: 'PLAYBACK', val: 'Playback' }
+      - { name: 'BLE_STARTUP', val: 'BLE Startup' }
+      - { name: 'UNKNOWN', val: 'Other' }

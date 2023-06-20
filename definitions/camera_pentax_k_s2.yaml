@@ -1,0 +1,25 @@
+settings:
+  - support_class: 'Channel'
+    rest_key: 'channel'
+    rest_value:
+      - { name: 'N0', val: '0' }
+      - { name: 'N1', val: '1' }
+      - { name: 'N2', val: '2' }
+      - { name: 'N3', val: '3' }
+      - { name: 'N4', val: '4' }
+      - { name: 'N5', val: '5' }
+      - { name: 'N6', val: '6' }
+      - { name: 'N7', val: '7' }
+      - { name: 'N8', val: '8' }
+      - { name: 'N9', val: '9' }
+      - { name: 'N10', val: '10' }
+      - { name: 'N11', val: '11' }
+  - support_class: 'Key'
+    rest_key: 'key'
+    rest_value:
+  - support_class: 'SSID'
+    rest_key: 'ssid'
+    rest_value:
+  - support_class: 'LiveViewSpecification'
+    rest_key: 'focusEffectiveArea'
+    rest_value:

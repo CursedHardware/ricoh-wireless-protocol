@@ -15,3 +15,7 @@ This reverse engineering based project [Image Sync][image-sync] [2.1.17][apk] ap
 ## Bluetooth Control plane
 
 IN PROGRESS
+
+## Definitions
+
+The [definitions](definitions) (original path is `res/raw`) folder extracted from Image Sync app

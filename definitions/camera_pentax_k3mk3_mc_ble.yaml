@@ -1,0 +1,128 @@
+settings:
+  - support_class: 'CameraTime'
+    chara_name: 'Date Time'
+    field_name: 'Year'
+    field_name1: 'Month'
+    field_name2: 'Day'
+    field_name3: 'Hours'
+    field_name4: 'Minutes'
+    field_name5: 'Seconds'
+    mapping:
+  - support_class: 'Channel'
+    chara_name: 'Channel'
+    field_name: 'Channel'
+    mapping:
+      - { name: 'N1', val: '1ch' }
+      - { name: 'N2', val: '2ch' }
+      - { name: 'N3', val: '3ch' }
+      - { name: 'N4', val: '4ch' }
+      - { name: 'N5', val: '5ch' }
+      - { name: 'N6', val: '6ch' }
+      - { name: 'N7', val: '7ch' }
+      - { name: 'N8', val: '8ch' }
+      - { name: 'N9', val: '9ch' }
+      - { name: 'N10', val: '10ch' }
+      - { name: 'N11', val: '11ch' }
+  - support_class: 'Key'
+    chara_name: 'Passphrase'
+    field_name: 'Passphrase'
+    mapping:
+  - support_class: 'SSID'
+    chara_name: 'SSID'
+    field_name: 'SSID'
+    mapping:
+  - support_class: 'CardSlot'
+    chara_name: 'File Type'
+    field_name: 'File Type'
+    field_name2: 'Raw Type'
+    field_name3: 'CardSlot'
+    mapping:
+      - { name: 'SD1', val: '__NON-ZERO PADDING__', val2: '__NON-ZERO PADDING__', val3: 'sd1' }
+      - { name: 'SD2', val: '__NON-ZERO PADDING__', val2: '__NON-ZERO PADDING__', val3: 'sd2' }
+  - support_class: 'DualCardSlotsMode'
+    chara_name: 'File Type'
+    field_name: 'File Type'
+    field_name2: 'Raw Type'
+    field_name3: 'CardSlot'
+    field_name4: 'SlotMode'
+    mapping:
+      - {
+          name: 'SEQUENTIAL_USE',
+          val: '__NON-ZERO PADDING__',
+          val2: '__NON-ZERO PADDING__',
+          val3: '__NON-ZERO PADDING__',
+          val4: '順次',
+        }
+      - {
+          name: 'SAVE_TO_BOTH',
+          val: '__NON-ZERO PADDING__',
+          val2: '__NON-ZERO PADDING__',
+          val3: '__NON-ZERO PADDING__',
+          val4: '複製',
+        }
+      - {
+          name: 'SEPARATE_RAW_JPEG',
+          val: '__NON-ZERO PADDING__',
+          val2: '__NON-ZERO PADDING__',
+          val3: '__NON-ZERO PADDING__',
+          val4: 'RAW/JPEG分離',
+        }
+  - support_class: 'ForcePowerOffDuringFileTransferEnable'
+    chara_name: 'Power Off During File Transfer'
+    field_name: 'Behavior'
+    mapping:
+      - { name: 'TRUE', val: '転送完了後に電源OFFする' }
+      - { name: 'FALSE', val: '転送を中断して電源OFFする' }
+  - support_class: 'AutoResizeEnable'
+    chara_name: 'Power Off During File Transfer'
+    field_name: 'Behavior'
+    field_name2: 'Auto Resize'
+    mapping:
+      - { name: 'FALSE', val: '', val2: 'リサイズせずに転送する' }
+      - { name: 'TRUE', val: '', val2: 'リサイズして転送する' }
+  - support_class: 'GEOTaggingEnable'
+    chara_name: 'GEO Tag'
+    field_name: 'Enable'
+    mapping:
+      - { name: 'TRUE', val: '1' }
+      - { name: 'FALSE', val: '0' }
+  - support_class: 'GPSInformation'
+    chara_name: 'GPS Information'
+    field_name: 'Latitude'
+    field_name2: 'Longitude'
+    field_name3: 'Altitude'
+    field_name4: 'Year'
+    field_name5: 'Month'
+    field_name6: 'Day'
+    field_name7: 'Hours'
+    field_name8: 'Minutes'
+    field_name9: 'Seconds'
+    field_name10: 'Datum'
+    mapping:
+      - { name: 'WGS84', val: '0' }
+  - support_class: 'WLANEnable'
+    chara_name: 'Network Type'
+    field_name: 'Network Type'
+    mapping:
+      - { name: 'TRUE', val: 'AP' }
+      - { name: 'FALSE', val: 'off' }
+  - support_class: 'PairedCentralDeviceName'
+    chara_name: 'Paired Device Name'
+    field_name: 'Paired Device Name'
+    mapping:
+  - support_class: 'BLEEnableCondition'
+    chara_name: 'BLE Enable Condition'
+    field_name: 'BLE Enable Condition'
+    mapping:
+      - { name: 'DISABLE', val: 'disable' }
+      - { name: 'ENABLE_ANYTIME', val: 'enable anytime' }
+      - { name: 'ENABLE_POWER_ON', val: 'enable power on' }
+  - support_class: 'OperationMode'
+    chara_name: 'Operation Mode'
+    field_name: 'Operation Mode'
+    mapping:
+      - { name: 'CAPTURE', val: 'Capture' }
+      - { name: 'PLAYBACK', val: 'Playback' }
+      - { name: 'BLE_STARTUP', val: 'BLE Startup' }
+      - { name: 'POWER_OFF_TRANSFER', val: 'PowerOffTransfer' }
+      - { name: 'UNKNOWN', val: 'Other' }
