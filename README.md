@@ -19,3 +19,22 @@ IN PROGRESS
 ## Definitions
 
 The [definitions](definitions) (original path is `res/raw`) folder extracted from Image Sync app
+
+## Alternative
+
+### Apps
+
+- [Image Sync](https://apps.apple.com/app/id959773524) (App Store)
+- [Image Sync](https://play.google.com/store/apps/details?id=com.ricohimaging.imagesync) (Play Store)
+- [GR Linker](https://apps.apple.com/app/id1600925588) (App Store)
+- [GR Lover](https://apps.apple.com/app/id1352636119) (App Store)
+- [GR Remote Viewer](https://apps.apple.com/app/id941671702) (App Store)
+
+### FOSS Tools
+
+- [GRfs](https://github.com/jakubroztocil/grfs)
+- [GRsync](https://github.com/clyang/GRsync)
+- [GR Remote](https://github.com/naoki-tomita/gr-remote)
+- [GR firmware unpacker](https://github.com/yeahnope/gr_unpack)
+- [GR Photo Synchronizer](https://github.com/JohnMaguire/photo_sync)
+- [GR Downloader](https://github.com/adriantache/GReat-Image-Downloader)
