@@ -1,8 +1,9 @@
 # RICOH Camera Wireless Protocol
 
-The project, reverse engineered [RICOH GRIIIx][gr3] camera control plane protocol stick
+This reverse engineering based project [Image Sync][image-sync] [2.1.17][apk] app got
 
-[gr3]: https://www.ricoh-imaging.co.jp/english/products/gr-3/
+[image-sync]: https://www.ricoh-imaging.co.jp/english/products/app/image-sync2/
+[apk]: https://web.archive.org/web/20230620024720if_/https://ricn.oss-cn-hangzhou.aliyuncs.com/download/50934d4f-a84e-4d4a-a8aa-06cfec4f62d6.apk
 
 ## Wi-Fi Control plane
 
