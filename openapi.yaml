@@ -791,7 +791,7 @@ components:
         Memory Slot
         * `in` - Internal Memory
         * `sd1` - SD Slot 1
-        * `sd2` - SD Slot 2
+        * `sd2` - SD Slot 2 (only Pentax K3 Mark III)
       schema:
         $ref: '#/components/schemas/MemorySlot'
     Limitation:
