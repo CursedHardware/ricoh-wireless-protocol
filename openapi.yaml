@@ -222,8 +222,8 @@ paths:
   /params/device:
     put:
       tags: [Properties]
-      description: Device Parameters
-      operationId: setDeviceParameters
+      description: Set Device Parameters
+      operationId: setDevice
       requestBody:
         required: true
         content:
@@ -243,8 +243,8 @@ paths:
   /params/camera:
     put:
       tags: [Properties]
-      description: Camera Parameters
-      operationId: setCameraParameters
+      description: Set Capture Parameters
+      operationId: setCapture
       requestBody:
         $ref: '#/components/requestBodies/CaptureSettings'
       responses:
@@ -255,8 +255,8 @@ paths:
   /params/camera/compAdjust:
     put:
       tags: [Properties]
-      description: Composition Adjust
-      operationId: setCompositionAdjust
+      description: Composition Adjustment
+      operationId: setCompositionAdjustment
       requestBody:
         required: true
         content:
@@ -283,8 +283,8 @@ paths:
   /params/lens:
     put:
       tags: [Properties]
-      description: Lens Parameters
-      operationId: setLensParameters
+      description: Set Lens Parameters
+      operationId: setLens
       requestBody:
         required: true
         content:
