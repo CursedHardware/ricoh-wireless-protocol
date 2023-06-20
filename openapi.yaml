@@ -92,12 +92,7 @@ paths:
         default:
           $ref: '#/components/responses/Error'
   /changes:
-    get:
-      tags: [Photo]
-      description: Changeset (WebSocket ONLY)
-      responses:
-        200:
-          description: Subscription Changeset
+    description: Changeset (WebSocket ONLY)
   /props:
     get:
       tags: [Properties]
@@ -108,17 +103,7 @@ paths:
         default:
           $ref: '#/components/responses/Error'
   /liveview:
-    get:
-      tags: [Capture]
-      description: Live View (M-JPEG video stream)
-      responses:
-        200:
-          description: M-JPEG video stream
-          content:
-            application/octet-stream:
-              schema:
-                type: string
-                format: binary
+    description: Live View (M-JPEG video stream)
   /camera/shoot:
     post:
       tags: [Capture]
@@ -329,16 +314,16 @@ paths:
     servers:
       - url: http://192.168.1.1/v1
         description: only RICOH G900SE available
+    parameters:
+      - name: Content-Disposition
+        in: header
+        example: attachment; filename="<filename>"
+        schema:
+          type: string
     put:
       tags: [Properties]
       description: Send Camera Memo List (RICOH G900SE only)
       operationId: sendCameraMemoList
-      parameters:
-        - name: Content-Disposition
-          in: header
-          example: attachment; filename="<filename>"
-          schema:
-            type: string
       requestBody:
         $ref: '#/components/requestBodies/UploadFile'
       responses:
