@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "42Crunch.vscode-openapi",
+    "philosowaffle.openapi-designer",
+    "esbenp.prettier-vscode",
+    "redhat.vscode-yaml"
+  ]
+}

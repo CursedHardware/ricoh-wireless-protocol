@@ -1,0 +1,975 @@
+openapi: 3.0.3
+info:
+  title: RIOCH Camera Wireless Protocol
+  version: v1.0
+servers:
+  - url: http://192.168.0.1/v1
+    description: General
+  - url: http://192.168.1.1/v1
+    description: only RICOH G900SE available
+paths:
+  /photos:
+    parameters:
+      - $ref: '#/components/parameters/Storage'
+      - $ref: '#/components/parameters/Limitation'
+      - $ref: '#/components/parameters/After'
+    get:
+      tags: [Photo]
+      operationId: getPhotoList
+      responses:
+        200:
+          $ref: '#/components/responses/PhotoList'
+        default:
+          $ref: '#/components/responses/Error'
+  /photos/{folder}/{file}:
+    parameters:
+      - $ref: '#/components/parameters/Folder'
+      - $ref: '#/components/parameters/File'
+      - $ref: '#/components/parameters/Storage'
+      - $ref: '#/components/parameters/ImageDimension'
+    get:
+      tags: [Photo]
+      operationId: downloadPhoto
+      description: Download Specific Photo
+      responses:
+        200:
+          $ref: '#/components/responses/PhotoDownload'
+        default:
+          $ref: '#/components/responses/Error'
+  /photos/{folder}/{file}/info:
+    parameters:
+      - $ref: '#/components/parameters/Folder'
+      - $ref: '#/components/parameters/File'
+      - $ref: '#/components/parameters/Storage'
+    get:
+      tags: [Photo]
+      operationId: getPhotoInfo
+      description: Get Specific File Information
+      responses:
+        200:
+          $ref: '#/components/responses/PhotoMetadata'
+        default:
+          $ref: '#/components/responses/Error'
+  /photos/{folder}/{file}/transfer:
+    parameters:
+      - $ref: '#/components/parameters/Folder'
+      - $ref: '#/components/parameters/File'
+    put:
+      tags: [Photo]
+      operationId: setTransferStatus
+      description: Set Specific File Transfer Status
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                status:
+                  $ref: '#/components/schemas/TransferStatus'
+                storage:
+                  $ref: '#/components/schemas/MemorySlot'
+              required: ['status', 'storage']
+              additionalProperties: false
+      responses:
+        200:
+          $ref: '#/components/responses/Properties'
+        default:
+          $ref: '#/components/responses/Error'
+  /transfers:
+    parameters:
+      - $ref: '#/components/parameters/TransferStatus'
+      - $ref: '#/components/parameters/Storage'
+      - $ref: '#/components/parameters/Limitation'
+      - $ref: '#/components/parameters/After'
+    get:
+      tags: [Photo]
+      operationId: getTransferList
+      description: Transfer List
+      responses:
+        200:
+          $ref: '#/components/responses/TransferList'
+        default:
+          $ref: '#/components/responses/Error'
+  /changes:
+    get:
+      tags: [Photo]
+      description: Changeset (WebSocket ONLY)
+      responses:
+        200:
+          description: Subscription Changeset
+  /props:
+    get:
+      tags: [Properties]
+      description: Properties
+      responses:
+        200:
+          $ref: '#/components/responses/Properties'
+        default:
+          $ref: '#/components/responses/Error'
+  /liveview:
+    get:
+      tags: [Capture]
+      description: Live View (M-JPEG video stream)
+      responses:
+        200:
+          description: M-JPEG video stream
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+  /camera/shoot:
+    post:
+      tags: [Capture]
+      description: Shoot
+      operationId: shoot
+      responses:
+        200:
+          $ref: '#/components/responses/Shoot'
+        default:
+          $ref: '#/components/responses/Error'
+  /camera/shoot/start:
+    post:
+      tags: [Capture]
+      description: Start Shoot
+      operationId: startShoot
+      responses:
+        200:
+          $ref: '#/components/responses/Shoot'
+        default:
+          $ref: '#/components/responses/Error'
+  /camera/shoot/compose:
+    post:
+      tags: [Capture]
+      description: Compose Shoot
+      operationId: composeShoot
+      responses:
+        200:
+          $ref: '#/components/responses/Shoot'
+        default:
+          $ref: '#/components/responses/Error'
+  /camera/shoot/cancel:
+    post:
+      tags: [Capture]
+      description: Cancel Shoot
+      operationId: cancelShoot
+      responses:
+        200:
+          $ref: '#/components/responses/Shoot'
+        default:
+          $ref: '#/components/responses/Error'
+  /camera/shoot/finish:
+    post:
+      tags: [Capture]
+      description: Finish Shoot
+      operationId: finishShoot
+      responses:
+        200:
+          $ref: '#/components/responses/Shoot'
+        default:
+          $ref: '#/components/responses/Error'
+  /lens/focus:
+    post:
+      tags: [Capture]
+      description: Lens focus
+      operationId: focus
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                pos:
+                  description: Position
+                  type: string
+                  example: <x>,<y>
+              required: [pos]
+              additionalProperties: false
+      responses:
+        200:
+          $ref: '#/components/responses/Focus'
+        default:
+          $ref: '#/components/responses/Error'
+  /lens/focus/lock:
+    post:
+      tags: [Capture]
+      description: Lock focus
+      operationId: setLockFocus
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                pos:
+                  description: Position
+                  type: string
+                  example: <x>,<y>
+                af:
+                  description: Autofocus
+                  type: string
+                  enum: ['on', 'off', camera]
+              required: [pos, af]
+              additionalProperties: false
+      responses:
+        200:
+          $ref: '#/components/responses/Focus'
+        default:
+          $ref: '#/components/responses/Error'
+  /params/device:
+    put:
+      tags: [Properties]
+      description: Device Parameters
+      operationId: setDeviceParameters
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                stillFormat:
+                  $ref: '#/components/schemas/CameraParams/properties/stillFormat'
+              required: [stillFormat]
+              additionalProperties: false
+      responses:
+        200:
+          $ref: '#/components/responses/Properties'
+        default:
+          $ref: '#/components/responses/Error'
+  /params/camera:
+    put:
+      tags: [Properties]
+      description: Camera Parameters
+      operationId: setCameraParameters
+      requestBody:
+        $ref: '#/components/requestBodies/CaptureSettings'
+      responses:
+        200:
+          $ref: '#/components/responses/Properties'
+        default:
+          $ref: '#/components/responses/Error'
+  /params/camera/compAdjust:
+    put:
+      tags: [Properties]
+      description: Composition Adjust
+      operationId: setCompositionAdjust
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                x:
+                  type: integer
+                y:
+                  type: integer
+                r:
+                  type: integer
+                setting:
+                  description: Enable Composition Adjustment
+                  type: boolean
+              required: ['x', 'y', 'r']
+              additionalProperties: false
+      responses:
+        200:
+          $ref: '#/components/responses/Properties'
+        default:
+          $ref: '#/components/responses/Error'
+  /params/lens:
+    put:
+      tags: [Properties]
+      description: Lens Parameters
+      operationId: setLensParameters
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                focusSetting:
+                  $ref: '#/components/schemas/FocusSettings/properties/focusSetting'
+              required: [focusSetting]
+              additionalProperties: false
+      responses:
+        200:
+          $ref: '#/components/responses/Properties'
+        default:
+          $ref: '#/components/responses/Error'
+  /params/lens/zoom:
+    post:
+      tags: [Properties]
+      description: Set Zoom Level
+      operationId: setZoomLevel
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                level:
+                  description: Zoom Level
+                  type: string
+                  enum: [1.0x, 1.2x, 1.5x, 1.8x, 2.2x, 2.7x, 3.3x, 4.1x, 5.0x]
+              required: [level]
+              additionalProperties: false
+      responses:
+        200:
+          $ref: '#/components/responses/Properties'
+        default:
+          $ref: '#/components/responses/Error'
+  /configs/cameramemofile:
+    description: Send Camera Memo List (RICOH G900SE only)
+    servers:
+      - url: http://192.168.1.1/v1
+        description: only RICOH G900SE available
+    put:
+      tags: [Properties]
+      description: Send Camera Memo List (RICOH G900SE only)
+      operationId: sendCameraMemoList
+      parameters:
+        - name: Content-Disposition
+          in: header
+          example: attachment; filename="<filename>"
+          schema:
+            type: string
+      requestBody:
+        $ref: '#/components/requestBodies/UploadFile'
+      responses:
+        200:
+          $ref: '#/components/responses/Properties'
+        default:
+          $ref: '#/components/responses/Error'
+  /device/wlan/finish:
+    post:
+      tags: [Device]
+      description: Power Off WLAN
+      operationId: sendPowerOffWLAN
+      responses:
+        default:
+          $ref: '#/components/responses/Error'
+  /device/finish:
+    description: Power Off Camera
+    post:
+      tags: [Device]
+      description: Power Off Camera
+      operationId: sendPowerOffCamera
+      responses:
+        default:
+          $ref: '#/components/responses/Error'
+components:
+  schemas:
+    PhotoOrientation:
+      type: integer
+      enum: [1, 2, 3, 4, 5, 6, 7, 8]
+      description: |
+        * `1` - Horizontal (normal)
+        * `2` - Mirror horizontal
+        * `3` - Rotate 180 CW
+        * `4` - Mirror vertical
+        * `5` - Mirror horizontal and rotate 270 CW
+        * `6` - Rotate 90 CW
+        * `7` - Mirror horizontal and rotate 90 CW
+        * `8` - Rotate 270 CW
+    FolderName:
+      description: Folder Name
+      type: string
+      example: 100_MMDD
+    FileName:
+      description: File Name
+      type: string
+      example: R0000001.DNG
+    TransferStatus:
+      type: string
+      enum: [transferred, untransferred]
+    TransferItem:
+      description: Transfer
+      type: object
+      properties:
+        index:
+          type: integer
+        filepath:
+          type: string
+        size:
+          $ref: '#/components/schemas/FileSize'
+      additionalProperties: false
+    Properties:
+      description: Properties
+      allOf:
+        - $ref: '#/components/schemas/CameraInfo'
+        - $ref: '#/components/schemas/CameraParams'
+        - $ref: '#/components/schemas/Battery'
+        - $ref: '#/components/schemas/WiFiSettings'
+        - $ref: '#/components/schemas/BluetoothSettings'
+        - $ref: '#/components/schemas/GPSSettings'
+        - $ref: '#/components/schemas/FocusSettings'
+        - $ref: '#/components/schemas/PowerOffTransfer'
+        - $ref: '#/components/schemas/OperationMode'
+        - $ref: '#/components/schemas/CameraTime'
+        - type: object
+          properties:
+            hot:
+              type: boolean
+            storages:
+              $ref: '#/components/schemas/StorageList'
+          additionalProperties: false
+    CameraInfo:
+      type: object
+      properties:
+        manufacturer:
+          type: string
+          example: 'RICOH IMAGING COMPANY, LTD.'
+        model:
+          type: string
+          example: RICOH GR IIIx
+        serialNo:
+          type: string
+          example: '*******'
+        firmwareVersion:
+          type: string
+          example: <major>.<minor>
+        macAddress:
+          type: string
+          example: MM:MM:MM:SS:SS:SS
+      additionalProperties: false
+    CameraParams:
+      type: object
+      properties:
+        capturing:
+          type: boolean
+        onePushBracket:
+          type: boolean
+        autoResize:
+          type: string
+          enum: ['on', 'off']
+        shotsTotal:
+          type: integer
+        shotsCurrent:
+          type: integer
+        stateStill:
+          $ref: '#/components/schemas/State'
+        stateMovie:
+          $ref: '#/components/schemas/State'
+        countDown:
+          $ref: '#/components/schemas/SelfTimerState'
+        liveState:
+          $ref: '#/components/schemas/State'
+        cameraOrientation:
+          type: string
+          enum: [none, positive, reverse, vertical_right, vertical_left]
+        av:
+          description: Focal Length
+          type: string
+          example: '2.8'
+        avList:
+          description: Available Focal length list
+          $ref: '#/components/schemas/StringList'
+        tv:
+          description: Shutter Speed
+          type: string
+          example: '1.50'
+        tvList:
+          $ref: '#/components/schemas/StringList'
+        sv:
+          description: ISO value
+          type: string
+          example: '1600'
+        svList:
+          description: Available ISO values
+          $ref: '#/components/schemas/StringList'
+        xv:
+          description: EV level
+          type: string
+          example: '0.0'
+        xvList:
+          description: Available EV levels
+          $ref: '#/components/schemas/StringList'
+        captureMode:
+          type: string
+          enum: [still, movie]
+        captureModeList:
+          $ref: '#/components/schemas/StringList'
+        shootMode:
+          description: Capture Method
+          type: string
+        shootModeList:
+          description: Available Capture Method List
+          $ref: '#/components/schemas/StringList'
+        exposureMode:
+          type: string
+        exposureModeList:
+          $ref: '#/components/schemas/StringList'
+        meteringMode:
+          type: string
+        meteringModeList:
+          $ref: '#/components/schemas/StringList'
+        WBMode:
+          description: White Balance Mode
+          type: string
+        WBModeList:
+          description: Available White Balance Mode List
+          $ref: '#/components/schemas/StringList'
+        effect:
+          type: string
+        effectList:
+          $ref: '#/components/schemas/StringList'
+        resoList:
+          description: Resolution list
+          $ref: '#/components/schemas/StringList'
+        stillFormat:
+          description: Still Format
+          type: string
+          enum: [jpeg, dng, rawdng]
+        stillFormatList:
+          $ref: '#/components/schemas/StringList'
+        stillSize:
+          type: string
+        stillSizeList:
+          $ref: '#/components/schemas/StringList'
+      additionalProperties: false
+    Battery:
+      type: object
+      properties:
+        battery:
+          description: Battery Level (percentage)
+          type: integer
+        batteryUsed:
+          description: Battery Used
+          type: string
+          enum: [battery, acAdapter]
+      additionalProperties: false
+    WiFiSettings:
+      type: object
+      properties:
+        ssid:
+          description: Wi-Fi SSID
+          type: string
+          example: 'GR_******'
+        key:
+          description: Wi-Fi Passphrase
+          type: string
+          example: '********'
+        channel:
+          description: Wi-Fi Channel
+          type: integer
+          example: 6
+        channelList:
+          description: Wi-Fi Available Channels
+          $ref: '#/components/schemas/IntegerList'
+      additionalProperties: false
+    BluetoothSettings:
+      type: object
+      properties:
+        bdName:
+          description: Bluetooth Name
+          type: string
+          example: 'GR_******'
+        bleEnableCondition:
+          description: Bluetooth Enable Condition
+          type: string
+          enum: [disable, enableAnytime, enablePowerOn]
+      additionalProperties: false
+    FocusSettings:
+      type: object
+      properties:
+        focused:
+          type: boolean
+        focusMode:
+          type: string
+          enum: [af, mf]
+        focusSetting:
+          type: string
+        focusSettingList:
+          $ref: '#/components/schemas/StringList'
+        focusEffectiveArea:
+          description: Live View Specification
+          $ref: '#/components/schemas/IntegerList'
+          minLength: 2
+          maxLength: 2
+      additionalProperties: false
+    MoviceSettings:
+      type: object
+      properties:
+        movieSize:
+          type: string
+        movieSizeList:
+          $ref: '#/components/schemas/StringList'
+      additionalProperties: false
+    GPSSettings:
+      type: object
+      properties:
+        geoTagging:
+          description: Enable Geo Tagging
+          type: string
+          enum: ['on', 'off']
+        gpsInfo:
+          description: GPS Information
+          type: string
+          example: <latitude>,<longitude>,<altitude>,<iso8601>,<datum>
+      additionalProperties: false
+    PowerOffTransfer:
+      type: object
+      properties:
+        powerOffTransfer:
+          description: Force Power Off During File Transfer Enable
+          type: string
+          enum: ['on', 'off']
+      additionalProperties: false
+    FileSize:
+      description: File Size (bytes)
+      type: integer
+      minimum: 0
+    CameraTime:
+      type: object
+      properties:
+        datetime:
+          description: Camera Time
+          type: string
+          format: date-time
+      additionalProperties: false
+    OperationMode:
+      type: object
+      properties:
+        operationMode:
+          description: Operation Mode
+          type: string
+          enum: [capture, playback, bleStartup, powerOffTransfer, other]
+        operationModeList:
+          description: Operation Mode List
+          $ref: '#/components/schemas/StringList'
+      additionalProperties: false
+    CameraDeviceSettings:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/WiFiSettings'
+        - $ref: '#/components/schemas/GPSSettings'
+        - $ref: '#/components/schemas/BluetoothSettings'
+        - $ref: '#/components/schemas/PowerOffTransfer'
+        - $ref: '#/components/schemas/OperationMode'
+        - $ref: '#/components/schemas/CameraTime'
+        - type: object
+          minProperties: 1
+          properties:
+            autoResize:
+              $ref: '#/components/schemas/CameraParams/properties/autoResize'
+            focusEffectiveArea:
+              $ref: '#/components/schemas/FocusSettings/properties/focusEffectiveArea'
+      additionalProperties: false
+    CaptureSettings:
+      description: Capture Settings
+      type: object
+      minProperties: 1
+      properties:
+        astroTrackingTime:
+          type: string
+        cameraOrientation:
+          $ref: '#/components/schemas/CameraParams/properties/cameraOrientation'
+        shootMode:
+          $ref: '#/components/schemas/CameraParams/properties/shootMode'
+        captureMode:
+          $ref: '#/components/schemas/CameraParams/properties/captureMode'
+        compAdjust:
+          type: string
+          enum: ['on', 'off']
+        effect:
+          $ref: '#/components/schemas/CameraParams/properties/effect'
+        filter:
+          description: Digital Filter
+          type: string
+        av:
+          $ref: '#/components/schemas/CameraParams/properties/av'
+        tv:
+          $ref: '#/components/schemas/CameraParams/properties/tv'
+        sv:
+          $ref: '#/components/schemas/CameraParams/properties/sv'
+        xv:
+          $ref: '#/components/schemas/CameraParams/properties/xv'
+        focusMode:
+          $ref: '#/components/schemas/FocusSettings/properties/focusMode'
+        meteringMode:
+          $ref: '#/components/schemas/CameraParams/properties/meteringMode'
+        exposureMode:
+          $ref: '#/components/schemas/CameraParams/properties/exposureMode'
+        gradND:
+          type: string
+          enum: ['off', normal, reverse, custom1, custom2, custom3]
+        movieSize:
+          $ref: '#/components/schemas/MoviceSettings/properties/movieSize'
+        shotsTotal:
+          $ref: '#/components/schemas/CameraParams/properties/shotsTotal'
+        onePushBracket:
+          $ref: '#/components/schemas/CameraParams/properties/onePushBracket'
+        stillSize:
+          $ref: '#/components/schemas/CameraParams/properties/stillSize'
+        cameraMovieSetting:
+          type: string
+        WBMode:
+          $ref: '#/components/schemas/CameraParams/properties/WBMode'
+        type3CaptureState:
+          type: string
+          enum: [idle, preliminary, main]
+        type3PreCaptureResult:
+          type: string
+          enum: [ok, undetectable_error, exposure_time_error]
+      additionalProperties: false
+    Storage:
+      type: object
+      properties:
+        name:
+          $ref: '#/components/schemas/MemorySlot'
+        format:
+          type: string
+          enum: [jpeg, tiff, jpg, tif, dpof, pef, dng, mp4, mov, avi]
+        remain:
+          description: Remaining photo (still image)
+          type: integer
+        recordableTime:
+          description: Recordable time (movie)
+          type: integer
+        numOfPhotos:
+          type: integer
+        numOfMovies:
+          type: integer
+        equipped:
+          type: boolean
+        available:
+          type: boolean
+        writable:
+          type: boolean
+      additionalProperties: false
+    StorageList:
+      type: array
+      minItems: 1
+      items:
+        $ref: '#/components/schemas/Storage'
+    MemorySlot:
+      type: string
+      enum: [in, sd1, sd2]
+    State:
+      type: string
+      enum: [idle, busy]
+    SelfTimerState:
+      type: string
+      enum: [idle, busy2s, busy10s, busy12s, time]
+    StringList:
+      type: array
+      items:
+        type: string
+    IntegerList:
+      type: array
+      items:
+        type: integer
+  parameters:
+    ImageDimension:
+      name: size
+      in: query
+      description: |
+        Image Dimension
+        * none - 6000x4000 (≈ 36 MiB)
+        * `xs` - 1920x1280 (≈ 4 MiB)
+        * `view` - 720x480 (≈ 500 KiB)
+        * `thumb` - 160x120 (≈ 30 KiB)
+      schema:
+        type: string
+        enum: [xs, view, thumb]
+    TransferStatus:
+      name: status
+      required: true
+      in: query
+      schema:
+        $ref: '#/components/schemas/TransferStatus'
+    Storage:
+      name: storage
+      in: query
+      description: |
+        Memory Slot
+        * `in` - Internal Memory
+        * `sd1` - SD Slot 1
+        * `sd2` - SD Slot 2
+      schema:
+        $ref: '#/components/schemas/MemorySlot'
+    Limitation:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+    After:
+      name: after
+      in: query
+      schema:
+        type: string
+        format: date-time
+    Folder:
+      name: folder
+      in: path
+      required: true
+      description: Folder Name
+      schema:
+        $ref: '#/components/schemas/FolderName'
+    File:
+      name: file
+      in: path
+      required: true
+      description: File Name
+      schema:
+        $ref: '#/components/schemas/FileName'
+  responses:
+    PhotoList:
+      description: Photo List
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              dirs:
+                description: Folder List
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      $ref: '#/components/schemas/FolderName'
+                    files:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/FileName'
+                  additionalProperties: false
+            additionalProperties: false
+    PhotoDownload:
+      description: Photo Download
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+    PhotoMetadata:
+      description: Photo Metadata
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              cameraModel:
+                type: string
+                example: RICOH GR IIIx
+              dir:
+                $ref: '#/components/schemas/FolderName'
+              file:
+                $ref: '#/components/schemas/FileName'
+              orientation:
+                $ref: '#/components/schemas/PhotoOrientation'
+              aspectRatio:
+                type: string
+                description: '<width>:<height>'
+                example: '3:2'
+              av:
+                $ref: '#/components/schemas/CameraParams/properties/av'
+              tv:
+                $ref: '#/components/schemas/CameraParams/properties/tv'
+              sv:
+                $ref: '#/components/schemas/CameraParams/properties/sv'
+              xv:
+                $ref: '#/components/schemas/CameraParams/properties/xv'
+              size:
+                $ref: '#/components/schemas/FileSize'
+              gpsInfo:
+                $ref: '#/components/schemas/GPSSettings/properties/gpsInfo'
+              datetime:
+                $ref: '#/components/schemas/CameraTime/properties/datetime'
+            additionalProperties: false
+    TransferList:
+      description: Transfer List
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              transfers:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TransferItem'
+            additionalProperties: false
+    Shoot:
+      description: Shoot
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              captureId:
+                type: integer
+              captured:
+                type: boolean
+              focused:
+                type: boolean
+            required: [captureId]
+            additionalProperties: false
+    Focus:
+      description: Focus
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              captureId:
+                type: integer
+              focused:
+                type: boolean
+              focusRunning:
+                type: boolean
+              focusCenters:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IntegerList'
+              focusEffectiveArea:
+                $ref: '#/components/schemas/FocusSettings/properties/focusEffectiveArea'
+            required: [captureId]
+            additionalProperties: false
+    Properties:
+      description: Properties
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Properties'
+    Error:
+      description: Error Information
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              errCode:
+                type: integer
+                example: 200
+              errMsg:
+                type: string
+                example: OK
+            additionalProperties: false
+            required: [errCode, errMsg]
+  requestBodies:
+    UploadFile:
+      required: true
+      content:
+        text/plain:
+          schema:
+            type: string
+            format: binary
+    CaptureSettings:
+      required: true
+      content:
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: '#/components/schemas/CaptureSettings'
+    CameraDeviceSettings:
+      required: true
+      content:
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: '#/components/schemas/CameraDeviceSettings'
