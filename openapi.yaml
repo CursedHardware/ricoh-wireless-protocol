@@ -181,7 +181,7 @@ paths:
     post:
       tags: [Capture]
       description: Lock focus
-      operationId: setLockFocus
+      operationId: lockFocus
       requestBody:
         required: true
         content:
@@ -199,6 +199,16 @@ paths:
                   enum: ['on', 'off', camera]
               required: [pos, af]
               additionalProperties: false
+      responses:
+        200:
+          $ref: '#/components/responses/Focus'
+        default:
+          $ref: '#/components/responses/Error'
+  /lens/focus/unlock:
+    post:
+      tags: [Capture]
+      description: Unlock focus
+      operationId: unlockFocus
       responses:
         200:
           $ref: '#/components/responses/Focus'
