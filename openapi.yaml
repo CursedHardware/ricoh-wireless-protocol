@@ -472,11 +472,11 @@ components:
           type: string
           enum: [none, positive, reverse, vertical_right, vertical_left]
         av:
-          description: Focal Length
+          description: Aperture
           type: string
           example: '2.8'
         avList:
-          description: Available Focal length list
+          description: Available Aperture list
           $ref: '#/components/schemas/StringList'
         tv:
           description: Shutter Speed
