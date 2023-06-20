@@ -331,20 +331,33 @@ paths:
           $ref: '#/components/responses/Properties'
         default:
           $ref: '#/components/responses/Error'
+  /ping:
+    get:
+      tags: [Device]
+      description: Ping device
+      operationId: ping
+      responses:
+        200:
+          description: Ping Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CameraTime'
+        default:
+          $ref: '#/components/responses/Error'
   /device/wlan/finish:
     post:
       tags: [Device]
-      description: Power Off WLAN
-      operationId: sendPowerOffWLAN
+      description: Shutdown WLAN
+      operationId: shutdownWLAN
       responses:
         default:
           $ref: '#/components/responses/Error'
   /device/finish:
-    description: Power Off Camera
     post:
       tags: [Device]
-      description: Power Off Camera
-      operationId: sendPowerOffCamera
+      description: Shutdown Camera
+      operationId: shutdownCamera
       responses:
         default:
           $ref: '#/components/responses/Error'
